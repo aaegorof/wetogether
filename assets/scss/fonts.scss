@@ -1,0 +1,69 @@
+@import "vars";
+
+@mixin font-face(
+  $fontname,
+  $filename,
+  $fontstyle: normal,
+  $fontweight: normal
+) {
+  @font-face {
+    font-family: "#{$fontname}";
+    src: url("#{$filename}.ttf");
+
+    font-style: $fontstyle;
+    font-weight: $fontweight;
+  }
+}
+
+$fontsPath: "../fonts/FuturaPT";
+
+@include font-face("FuturaPT", "#{$fontsPath}Light", normal, 200);
+@include font-face("FuturaPT", "#{$fontsPath}Book", normal, 300);
+@include font-face("FuturaPT", "#{$fontsPath}Medium", normal, 400);
+@include font-face("FuturaPT", "#{$fontsPath}Demi", normal, 500);
+@include font-face("FuturaPT", "#{$fontsPath}Heavy", normal, 600);
+@include font-face("FuturaPT", "#{$fontsPath}Bold", normal, 700);
+@include font-face("FuturaPT", "#{$fontsPath}ExtraBold", normal, 900);
+
+body {
+  font-family: $font-family, BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica,sans-serif;
+  font-size: $font-size;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 46px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h2, .h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-top: 2em;
+}
+h3, .h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+h4, .h4 {
+  font-size: 20px;
+  letter-spacing: 0.25px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+
+$sm: nth(nth($breakpoints, 2),2);
+
+@media screen and (max-width: $sm) {
+  h1 {
+    font-size: 35px;
+  }
+  h2, .h2 {
+    font-size: 22px;
+  }
+  h4, .h4 {
+    font-size: 18px;
+  }
+}

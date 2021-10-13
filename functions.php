@@ -193,6 +193,7 @@ function twentytwenty_register_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
+	wp_enqueue_style( 'main', get_template_directory_uri(). '/assets/css/main.css', null, $theme_version );
 	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
 
 	// Add output of Customizer settings as inline style.
@@ -281,6 +282,7 @@ function twentytwenty_menus() {
 }
 
 add_action( 'init', 'twentytwenty_menus' );
+
 
 /**
  * Get the information about the logo.
@@ -785,4 +787,102 @@ function twentytwenty_get_elements_array() {
 	 * @param array Array of elements.
 	 */
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
+}
+
+function register_post_types(){
+    register_post_type('speaker', array(
+        'label' => 'Спикеры',
+        'description' => 'Спикеры',
+        'hierarchical' => false,
+        'supports' => array(
+            0 => 'title',
+            1 => 'thumbnail',
+            2 => 'excerpt',
+        ),
+        'taxonomies' => array(
+            0 => 'language',
+            1 => 'post_translations',
+        ),
+        'public' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'can_export' => true,
+        'delete_with_user' => 'null',
+        'labels' => array(
+            'singular_name' => 'Спикеры',
+            'add_new' => 'Добавить спикера',
+            'edit_item' => 'Редактировать спикера',
+        ),
+        'menu_icon' => 'dashicons-admin-users',
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => false,
+        'rewrite' => true,
+        'has_archive' => true,
+        'show_in_rest' => true,
+        'rest_base' => 'speaker',
+        'rest_controller_class' => 'WP_REST_Posts_Controller',
+        'acfe_archive_template' => '',
+        'acfe_archive_ppp' => 10,
+        'acfe_archive_orderby' => 'date',
+        'acfe_archive_order' => 'DESC',
+        'acfe_single_template' => '',
+        'acfe_admin_archive' => false,
+        'acfe_admin_ppp' => 10,
+        'acfe_admin_orderby' => 'date',
+        'acfe_admin_order' => 'DESC',
+        'menu_position' => 2,
+        'capability_type' => 'post',
+        'capabilities' => array(),
+        'map_meta_cap' => NULL,
+    ));
+}
+
+
+add_action('admin_head', 'fix_svg');
+function fix_svg() {
+    echo '<style type="text/css">
+        .attachment-266x266, .thumbnail img {
+             width: 100% !important;
+             height: auto !important;
+        }
+        </style>';
+};
+
+
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ( $existing_mimes=array() ) {
+    $existing_mimes['svg'] = 'image/svg+xml';
+    return $existing_mimes;
+}
+add_filter( 'wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 5 );
+
+# Исправление MIME типа для SVG файлов.
+function fix_svg_mime_type( $data, $file, $filename, $mimes, $real_mime = '' ){
+
+    // WP 5.1 +
+    if( version_compare( $GLOBALS['wp_version'], '5.1.0', '>=' ) )
+        $dosvg = in_array( $real_mime, [ 'image/svg', 'image/svg+xml' ] );
+    else
+        $dosvg = ( '.svg' === strtolower( substr($filename, -4) ) );
+
+    // mime тип был обнулен, поправим его
+    // а также проверим право пользователя
+    if( $dosvg ){
+
+        // разрешим
+        if( current_user_can('manage_options') ){
+
+            $data['ext']  = 'svg';
+            $data['type'] = 'image/svg+xml';
+        }
+        // запретим
+        else {
+            $data['ext'] = $type_and_ext['type'] = false;
+        }
+
+    }
+
+    return $data;
 }

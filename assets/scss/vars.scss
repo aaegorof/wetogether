@@ -1,0 +1,63 @@
+/// Grid
+$container: 1320px;
+$columns: 12;
+
+//Colors
+$text-color: #000;
+$primary: #EE9252;
+$secondary: #000AFF;
+$accent: #2F80ED;
+$error: #FF6B6B;
+
+$grey: #878787;
+$light-grey: #A8B7C3; //notes
+$grey-border: #6D7580;
+$map-grey: #CDD6E5;
+$bg-color: #F4F5F8;
+
+
+/// Fonts
+$font-size: 18px;
+$font-family: "FuturaPT";
+
+/// Media sizes and breakpoints
+$breakpoints: (
+        xs: 320px,
+        sm: 425px,
+        md: 900px,
+        lg: 1040px,
+        xl: 1440px
+);
+
+$colors: (
+        white: #fff,
+        primary: $primary,
+        secondary: $secondary,
+        accent: $accent,
+        red: $error,
+        grey: $grey,
+        lgrey: $light-grey
+);
+
+/// Margins
+$margins: (
+        xs: 20px,
+        sm: 30px,
+        md: 40px,
+        lg: 60px,
+        xl: 100px
+);
+
+$min-margin: 20px;
+
+
+/// Additional variables:
+$radius: 8px;
+$button-height: 48px;
+$input-height: 40px;
+$mobile-menu-height: 60px;
+$menu-height: 80px;
+
+
+$sm: nth(nth($breakpoints, 2), 2);
+$md: nth(nth($breakpoints, 3), 2);

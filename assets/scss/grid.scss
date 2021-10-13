@@ -1,0 +1,33 @@
+.container {
+  max-width: $container;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  width: 100%;
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  & > * {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: $container) {
+  .container {
+    padding-left: nth(nth($margins, 1),2);
+    padding-right: nth(nth($margins, 1),2);
+  }
+}
+
+
+  ///the lowest breakpoint
+  [class*="col-"] {
+    width: 100%;
+  }
