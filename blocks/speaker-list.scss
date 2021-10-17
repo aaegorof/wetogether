@@ -1,0 +1,24 @@
+@import "../assets/scss/vars";
+.speakers-wrap {
+  .speakers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $mg2;
+  }
+  .speaker-card {
+    $maxWidth: calc((100% - #{$mg2*3})/4);
+    background: white;
+    border-radius: 20px;
+    box-shadow: $shadow;
+    padding: 12px;
+    flex: 1 1 $maxWidth;
+    max-width: $maxWidth;
+    img {
+      width: 100%;
+    }
+  }
+  .speaker-name {
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+  }
+}

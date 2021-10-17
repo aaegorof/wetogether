@@ -18,13 +18,13 @@
 get_header();
 ?>
 <section class="main">
-  <?php if(has_flexible('features')):
-      the_flexible('features');
+  <?php if(has_flexible('content-row')):
+      the_flexible('content-row');
   endif; ?>
     <?php the_content(); ?>
 </section>
-<section class="speakers">
-  <?php get_template_part('template-parts/speaker-carousel'); ?>
-</section>
+<!--<section class="speakers">-->
+<!--  --><?php //get_template_part('template-parts/speaker-carousel'); ?>
+<!--</section>-->
 
 <?php get_footer(); ?>

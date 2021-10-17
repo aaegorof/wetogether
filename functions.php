@@ -886,3 +886,21 @@ function fix_svg_mime_type( $data, $file, $filename, $mimes, $real_mime = '' ){
 
     return $data;
 }
+
+
+add_action( 'widgets_init', 'register_my_widgets' );
+function register_my_widgets(){
+
+    register_sidebar( array(
+        'name'          => sprintf(__('Шапка %d'), $i ),
+        'id'            => "sidebar-$i",
+        'description'   => 'Обалсть в шапке сайта',
+        'class'         => '',
+        'before_widget' => '<div class="header-sidebar">',
+        'after_widget'  => "</div>",
+        'before_title'  => '',
+        'after_title'   => "",
+        'before_sidebar' => '', // WP 5.6
+        'after_sidebar'  => '', // WP 5.6
+    ) );
+}

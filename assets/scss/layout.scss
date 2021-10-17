@@ -3,9 +3,41 @@ html {
 }
 body {
   background: $bg-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .slick-slider {
   user-select: auto;
 }
 
+
+#site-header {
+  & > .row {
+    height: $menu-height;
+  }
+}
+
+#site-footer {
+  margin-top: auto;
+}
+
+.header-sidebar {
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+}
+
+
+section {
+  .section-tile, h2 {
+    margin-top: 0;
+    margin-bottom: $mg2;
+  }
+  padding: 45px 0;
+  .footer-notes {
+    max-width: 50%;
+  }
+}

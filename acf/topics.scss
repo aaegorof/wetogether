@@ -1,0 +1,17 @@
+section.topics-wrap {
+  .topics {
+    row-gap: 24px;
+    column-gap: 2%;
+  }
+  .topic-title {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .topic-item {
+    width: 32%;
+  }
+  .topic-icon {
+    margin-bottom: 1rem;
+  }
+
+}
