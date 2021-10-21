@@ -9,6 +9,7 @@
         $id =  $speaker->ID;
         $name = $speaker->post_title;
         $image = get_the_post_thumbnail_url($id);
+        $notes = $section['notes'];
     ?>
     <div class="speaker-card">
       <img src="<?= $image;?>" alt="<?= $name;?>">

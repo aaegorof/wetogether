@@ -904,3 +904,38 @@ function register_my_widgets(){
         'after_sidebar'  => '', // WP 5.6
     ) );
 }
+
+
+function ics_download() {
+
+        if (isset( $_GET['ics'] ) ) {
+
+            include get_stylesheet_directory() . '/inc/ICS.php';
+
+            header('Content-Type: text/calendar; charset=utf-8');
+
+            header('Content-Disposition: attachment; filename=invite.ics');
+
+
+            $ics = new ICS(array(
+
+                'location' => $_POST['location'],
+
+                'dtstart' => $_POST[start_date],
+
+                'dtend' => $_POST[end_date],
+
+                'summary' => $_POST['summary'],
+
+            ));
+
+
+            echo $ics->to_string();
+
+            exit();
+
+        }
+
+}
+
+add_action( 'template_redirect', 'ics_download' );
