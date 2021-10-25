@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-Bold.eot");
+  src: local("Euclid Circular B Bold"), local("EuclidCircularB-Bold"), url("../fonts/EuclidCircularB-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-Bold.woff2") format("woff2"), url("../fonts/EuclidCircularB-Bold.woff") format("woff"), url("../fonts/EuclidCircularB-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-Italic.eot");
+  src: local("Euclid Circular B Italic"), local("EuclidCircularB-Italic"), url("../fonts/EuclidCircularB-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-Italic.woff2") format("woff2"), url("../fonts/EuclidCircularB-Italic.woff") format("woff"), url("../fonts/EuclidCircularB-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-Medium.eot");
+  src: local("Euclid Circular B Medium"), local("EuclidCircularB-Medium"), url("../fonts/EuclidCircularB-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-Medium.woff2") format("woff2"), url("../fonts/EuclidCircularB-Medium.woff") format("woff"), url("../fonts/EuclidCircularB-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-SemiBoldItalic.eot");
+  src: local("Euclid Circular B SemiBold Italic"), local("EuclidCircularB-SemiBoldItalic"), url("../fonts/EuclidCircularB-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-SemiBoldItalic.woff2") format("woff2"), url("../fonts/EuclidCircularB-SemiBoldItalic.woff") format("woff"), url("../fonts/EuclidCircularB-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-BoldItalic.eot");
+  src: local("Euclid Circular B Bold Italic"), local("EuclidCircularB-BoldItalic"), url("../fonts/EuclidCircularB-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-BoldItalic.woff2") format("woff2"), url("../fonts/EuclidCircularB-BoldItalic.woff") format("woff"), url("../fonts/EuclidCircularB-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-MediumItalic.eot");
+  src: local("Euclid Circular B Medium Italic"), local("EuclidCircularB-MediumItalic"), url("../fonts/EuclidCircularB-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-MediumItalic.woff2") format("woff2"), url("../fonts/EuclidCircularB-MediumItalic.woff") format("woff"), url("../fonts/EuclidCircularB-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-SemiBold.eot");
+  src: local("Euclid Circular B SemiBold"), local("EuclidCircularB-SemiBold"), url("../fonts/EuclidCircularB-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-SemiBold.woff2") format("woff2"), url("../fonts/EuclidCircularB-SemiBold.woff") format("woff"), url("../fonts/EuclidCircularB-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-Light.eot");
+  src: local("Euclid Circular B Light"), local("EuclidCircularB-Light"), url("../fonts/EuclidCircularB-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-Light.woff2") format("woff2"), url("../fonts/EuclidCircularB-Light.woff") format("woff"), url("../fonts/EuclidCircularB-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-Regular.eot");
+  src: local("Euclid Circular B Regular"), local("EuclidCircularB-Regular"), url("../fonts/EuclidCircularB-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-Regular.woff2") format("woff2"), url("../fonts/EuclidCircularB-Regular.woff") format("woff"), url("../fonts/EuclidCircularB-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("../fonts/EuclidCircularB-LightItalic.eot");
+  src: local("Euclid Circular B Light Italic"), local("EuclidCircularB-LightItalic"), url("../fonts/EuclidCircularB-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularB-LightItalic.woff2") format("woff2"), url("../fonts/EuclidCircularB-LightItalic.woff") format("woff"), url("../fonts/EuclidCircularB-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "FuturaPT";
+  src: url("../fonts/FuturaPTLight.ttf");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "FuturaPT";
+  src: url("../fonts/FuturaPTBook.ttf");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "FuturaPT";
+  src: url("../fonts/FuturaPTMedium.ttf");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "FuturaPT";
+  src: url("../fonts/FuturaPTDemi.ttf");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "FuturaPT";
+  src: url("../fonts/FuturaPTHeavy.ttf");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "FuturaPT";
+  src: url("../fonts/FuturaPTBold.ttf");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "FuturaPT";
+  src: url("../fonts/FuturaPTExtraBold.ttf");
+  font-style: normal;
+  font-weight: 900;
+}
+body {
+  font-family: "Euclid Circular B", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 46px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h2, .h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-top: 2em;
+}
+
+h3, .h3 {
+  font-weight: 500;
+}
+
+h4, .h4 {
+  font-size: 20px;
+  letter-spacing: 0.25px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.f-500 {
+  font-weight: 500;
+}
+
+.f-600 {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  h2, .h2 {
+    font-size: 22px;
+  }
+
+  h4, .h4 {
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=fonts.css.map */

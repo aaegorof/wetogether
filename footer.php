@@ -18,13 +18,21 @@ $has_social_menu = has_nav_menu( 'social' );
 
 <footer id="site-footer" role="contentinfo" class="header-footer-group con">
 
-  <div class="section-inner container">
-
-    <div class="footer-credits">
+  <div class="section-inner container row">
+      <?php
+      // Site title or logo.
+      $logo = get_field('logo-gray', 'option');
+      $email_g = get_field('email_general', 'option');
+      $email_mass = get_field('email_mass_media', 'option');
+      $mail = twentytwenty_get_theme_svg( 'mail', 'social');
+//      $mail = twentytwenty_get_theme_svg( 'mail' );
+      ?>
+    <img src="<?= $logo['url'];?>" alt="" class="logo-gray col-md-1">
+    <div class="row col-md-10">
         <?php if ( $has_social_menu ) { ?>
-          <nav aria-label="<?php esc_attr_e( 'Social links', 'twentytwenty' ); ?>" class="footer-social-wrapper">
-
-            <ul class="social-menu footer-social reset-list-style social-icons fill-children-current-color">
+          <nav aria-label="<?php esc_attr_e( 'Social links', 'twentytwenty' ); ?>" class="footer-social-wrapper col-md-3 push-right">
+            <p>Мы в социальных сетях</p>
+            <ul class="social-menu footer-social reset-list-style social-icons">
 
                 <?php
                 wp_nav_menu(
@@ -46,8 +54,20 @@ $has_social_menu = has_nav_menu( 'social' );
             </ul><!-- .footer-social -->
 
           </nav><!-- .footer-social-wrapper -->
-
         <?php } ?>
+
+      <?php if($email_g) :?>
+      <div class="col-md-3">
+        <p>Общие вопросы</p>
+        <a href="mailto:<?= $email_g;?>" class="mail-link"><?= $mail ;?><?= $email_g;?></a>
+      </div>
+      <?php endif ;?>
+        <?php if($email_mass) :?>
+          <div>
+            <p>Для СМИ</p>
+            <a href="mailto:<?= $email_mass;?>" class="mail-link"><?= $mail ;?><?= $email_mass;?></a>
+          </div>
+        <?php endif ;?>
     </div><!-- .footer-credits -->
 
   </div><!-- .section-inner -->

@@ -2914,6 +2914,32 @@ section .footer-notes {
   background: #EDF0F3;
   font-size: 12px;
 }
+#site-footer .social-icons {
+  margin: 0;
+  width: auto;
+}
+#site-footer .social-icons li {
+  margin: 0 0.5rem 0 0;
+}
+#site-footer .social-icons a {
+  background: none;
+  width: auto;
+  height: auto;
+  fill: #EE9252;
+}
+#site-footer .mail-link {
+  color: #000;
+  font-size: 1rem;
+  display: inline-flex;
+  text-decoration: none;
+}
+#site-footer .mail-link:hover {
+  text-decoration: none;
+}
+#site-footer .mail-link svg {
+  margin-right: 5px;
+  fill: #EE9252;
+}
 
 .footer-copyright {
   background: #E6E9EE;
@@ -2921,6 +2947,10 @@ section .footer-notes {
   font-size: 12px;
   display: flex;
   align-items: center;
+  color: rgba(0, 0, 0, 0.4);
+}
+.footer-copyright a {
+  text-decoration: none;
 }
 
 .searchandfilter ul {

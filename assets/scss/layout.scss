@@ -63,10 +63,38 @@ section {
   margin-top: auto;
   background: $footer-bg;
   font-size: 12px;
+  .social-icons {
+    margin: 0;
+    width: auto;
+    li{ margin: 0 0.5rem 0 0}
+    a{
+      background: none;
+      width: auto;
+      height: auto;
+      fill: $primary;
+    }
+  }
+  .mail-link {
+    color: $text-color;
+    font-size: 1rem;
+    display: inline-flex;
+    text-decoration: none;
+    &:hover{
+      text-decoration: none;
+    }
+    svg {
+      margin-right: 5px;
+      fill: $primary;
+    }
+  }
 }
 .footer-copyright{
   background: $bg-copyright;
   height: 40px;
   font-size: 12px;
   display: flex;align-items: center;
+  color: rgba($text-color, 40%);
+  a {
+    text-decoration: none;
+  }
 }
