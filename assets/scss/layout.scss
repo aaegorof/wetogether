@@ -38,10 +38,6 @@ body {
 }
 
 
-#site-footer {
-  margin-top: auto;
-}
-
 .header-sidebar {
   ul {
     margin: 0;
@@ -59,4 +55,18 @@ section {
   .footer-notes {
     max-width: 50%;
   }
+}
+
+
+
+#site-footer {
+  margin-top: auto;
+  background: $footer-bg;
+  font-size: 12px;
+}
+.footer-copyright{
+  background: $bg-copyright;
+  height: 40px;
+  font-size: 12px;
+  display: flex;align-items: center;
 }

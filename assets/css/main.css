@@ -2893,10 +2893,6 @@ body {
   margin-bottom: 20px;
 }
 
-#site-footer {
-  margin-top: auto;
-}
-
 .header-sidebar ul {
   margin: 0;
   list-style: none;
@@ -2911,6 +2907,20 @@ section .section-tile, section h2 {
 }
 section .footer-notes {
   max-width: 50%;
+}
+
+#site-footer {
+  margin-top: auto;
+  background: #EDF0F3;
+  font-size: 12px;
+}
+
+.footer-copyright {
+  background: #E6E9EE;
+  height: 40px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
 }
 
 .searchandfilter ul {

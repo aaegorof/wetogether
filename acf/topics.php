@@ -9,6 +9,7 @@
 <section class="topics-wrap container">
     <?php $topics = get_sub_field('topics'); ?>
     <?php $section = get_sub_field('for_section'); ?>
+    <?php $notes = $section['notes'] ;?>
   <h2><?php echo $section['title']; ?></h2>
   <div class="row topics">
       <?php foreach ($topics as $topic) : ?>
@@ -18,7 +19,7 @@
           $iconId = get_field('icon', $topic);
           $iconUrl = wp_get_attachment_url($iconId);
           $description = $topic->description;
-          $notes = $section['notes'];
+
           ?>
         <div class="topic-item">
             <?php if ($iconUrl): ?>

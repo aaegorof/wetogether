@@ -11,51 +11,60 @@
  * @since Twenty Twenty 1.0
  */
 
+
+$has_social_menu = has_nav_menu( 'social' );
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
 
-				<div class="section-inner">
 
-					<div class="footer-credits">
+<footer id="site-footer" role="contentinfo" class="header-footer-group con">
 
-						<p class="footer-copyright">&copy;
-							<?php
-							echo date_i18n(
-								/* translators: Copyright date format, see https://www.php.net/manual/datetime.format.php */
-								_x( 'Y', 'copyright date format', 'twentytwenty' )
-							);
-							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+  <div class="section-inner container">
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
+    <div class="footer-credits">
+        <?php if ( $has_social_menu ) { ?>
+          <nav aria-label="<?php esc_attr_e( 'Social links', 'twentytwenty' ); ?>" class="footer-social-wrapper">
 
-					</div><!-- .footer-credits -->
+            <ul class="social-menu footer-social reset-list-style social-icons fill-children-current-color">
 
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location'  => 'social',
+                        'container'       => '',
+                        'container_class' => '',
+                        'items_wrap'      => '%3$s',
+                        'menu_id'         => '',
+                        'menu_class'      => '',
+                        'depth'           => 1,
+                        'link_before'     => '<span class="screen-reader-text">',
+                        'link_after'      => '</span>',
+                        'fallback_cb'     => '',
+                    )
+                );
+                ?>
 
-				</div><!-- .section-inner -->
+            </ul><!-- .footer-social -->
 
-			</footer><!-- #site-footer -->
+          </nav><!-- .footer-social-wrapper -->
 
-		<?php wp_footer(); ?>
+        <?php } ?>
+    </div><!-- .footer-credits -->
 
-	</body>
+  </div><!-- .section-inner -->
+
+</footer><!-- #site-footer -->
+<div class="footer-copyright">
+  <div class="container">&copy;
+    <?php
+    echo date_i18n(
+    /* translators: Copyright date format, see https://www.php.net/manual/datetime.format.php */
+        _x('Y', 'copyright date format', 'twentytwenty')
+    );
+    ?>
+  <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+  </div>
+</div><!-- .footer-copyright -->
+<?php wp_footer(); ?>
+
+</body>
 </html>

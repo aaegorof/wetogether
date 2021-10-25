@@ -26,7 +26,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-
+print_r($query);
 if ( $query->have_posts() )
 {
     ?>
