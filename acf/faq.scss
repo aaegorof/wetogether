@@ -1,0 +1,41 @@
+@import "../assets/scss/vars";
+.faq-wrap {
+  justify-content: center;
+  h2 {
+    text-align: center;
+  }
+  .faq-item {
+    border-bottom: 1px solid $light-grey;
+    &.opened {
+      .faq-answer {
+        height: initial;
+        opacity: 1;
+      }
+      .faq-title {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .faq-title {
+    font-size: 20px;
+    padding: 24px 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      margin-left: auto;
+      fill: $grey;
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s ease;
+    }
+  }
+  .faq-answer {
+    font-size: 16px;
+    height: 0;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+}
