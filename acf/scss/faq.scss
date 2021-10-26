@@ -1,4 +1,4 @@
-@import "../assets/scss/vars";
+@import "../../assets/scss/vars";
 .faq-wrap {
   justify-content: center;
   h2 {
@@ -6,6 +6,7 @@
   }
   .faq-item {
     border-bottom: 1px solid $light-grey;
+    overflow: hidden;
     &.opened {
       .faq-answer {
         height: initial;

@@ -2964,8 +2964,8 @@ section .footer-notes {
   gap: 24px;
 }
 .programm-results > .event-item {
-  flex: 1 1 calc((100% - 24px* (2-1))/ 2);
-  max-width: calc((100% - 24px* (2-1))/ 2);
+  flex: 1 1 calc((100% - 24px* (2 - 1))/ 2);
+  max-width: calc((100% - 24px* (2 - 1))/ 2);
 }
 .programm-results .event-item {
   background: white;

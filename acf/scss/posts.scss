@@ -1,0 +1,102 @@
+@import "../../assets/scss/vars";
+@import "../../assets/scss/mixins";
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $mg2;
+  //@include gap(3, $mg2, '*');
+  .post-item {
+    text-decoration: none;
+    box-shadow: $shadow;
+    padding: $mg2 / 2;
+    color: $text-color;
+    background: #fff;
+    border-radius: $radius-card;
+    display: block;
+    position: relative;
+    img {
+      border-radius: 14px;
+      width: 100%;
+    }
+    .date {
+      color: $grey-border;
+      display: flex;
+      font-size: 12px;
+      margin-bottom: 12px;
+      align-items: center;
+      svg {
+        margin-right: 10px;
+        width: 16px;
+        height: 16px;
+        fill: $grey-border;
+      }
+    }
+    .post-title {
+      font-size: 16px;
+    }
+  }
+  .post-tail {
+    $maxWidth: calc((100% - #{$mg2} * 2)/ 4);
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 $maxWidth;
+    max-width: $maxWidth;
+    .post-item{
+      width: 100%;
+    }
+    img {
+      display: none;
+    }
+    & > .post-item:first-child {
+      margin-bottom: $mg2;
+    }
+  }
+  &.columns {
+    @include gap(3, $mg2, '.post-item');
+  }
+  &.metro {
+    &>.post-item {
+      &:first-of-type {
+        $maxWidth: calc((100% - #{$mg2} * 2)/ 2);
+        text-align: center;
+        color: white;
+        flex: 1 1 $maxWidth;
+        max-width: $maxWidth;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          object-fit: cover;
+        }
+        .post-title, .date {
+          z-index: 2;
+          color: #fff;
+          position: relative;
+          svg {
+            fill: #fff;
+          }
+        }
+        .post-title{
+          font-size: 32px;
+        }
+        .date{
+          position: absolute;
+          bottom: 1rem;
+        }
+      }
+      &:nth-of-type(2) {
+        $maxWidth: calc((100% - #{$mg2} * 2)/ 4);
+        flex: 1 1 $maxWidth;
+        max-width: $maxWidth;
+        img {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}

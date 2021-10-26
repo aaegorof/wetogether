@@ -137,8 +137,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: $gap;
-  &>.#{$class} {
-    $maxWidth: calc((100% - #{$gap}* (#{$columns}-1))/ #{$columns});
+  > #{$class}{
+    $maxWidth: calc((100% - #{$gap}* (#{$columns} - 1))/ #{$columns});
     flex: 1 1 $maxWidth;
     max-width: $maxWidth;
   }

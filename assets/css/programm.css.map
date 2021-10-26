@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"programm.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/programm.scss","../scss/mixins.scss","../scss/vars.scss"],"names":[],"mappings":"AAGA;ECqIE;EACA;EACA,KC9FI;;AD+FJ;EAEE;EACA,WAFW;;ADvIb;EACE;EACA,eEuDU;EFtDV,YEwDK;EFvDL,SEmCE;EFlCF;;AACA;EACE;EACA;EACA;;AAGF;EACE;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;EACA;EACA,OEnBC;;AFuBP;EACE;EACA;EACA;EACA;;AACA;EACE;EACA,OE/BM;EFgCN;EACA;;AAEF;EACE,OECA;EFAA;EACA;EACA;;AAGJ;EACE;;AAEF;EACE","file":"programm.css"}

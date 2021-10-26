@@ -1,5 +1,8 @@
+@import "vars";
+@import "mixins";
+
 .programm-results {
-  @include gap(2, $mg2, event-item);
+  @include gap(2, $mg2, '.event-item');
   .event-item {
     background: white;
     border-radius: $radius-card;
@@ -11,6 +14,7 @@
       font-weight: 600;
       margin-bottom: 10px;
     }
+
     .post-categories {
       list-style-type: none;
       margin: 0;
