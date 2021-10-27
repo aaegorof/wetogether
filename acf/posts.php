@@ -8,20 +8,22 @@
 
 <section class="posts-wrap container">
     <?php global $post; ?>
-    <?php $types = get_sub_field('post-types'); ?>
+    <?php $type = get_sub_field('post-types'); ?>
     <?php $view = get_sub_field('posts_view'); ?>
     <?php $section = get_sub_field('for_section'); ?>
     <?php $notes = $section['notes']; ?>
+    <?php $postNumber = ($view === 'metro') ? 4 : 3 ;?>
     <?php $posts = get_posts(array(
-        'numberposts' => 4,
+        'numberposts' => $postNumber,
         'orderby' => 'date',
-        'post_type' => $types
+        'post_type' => $type
     ));
     ?>
   <h2><?php echo $section['title']; ?></h2>
   <div class="post-list <?= $view; ?>">
       <?php foreach ($posts as $key => $post) :
           setup_postdata($post); ?>
+      <?php $video = get_field('video') ;?>
           <?php
           $imgUrl = get_the_post_thumbnail_url($post);
           ?>
@@ -29,10 +31,11 @@
           echo '<div class="post-tail">';
       } ?>
         <a href="<?php the_permalink(); ?>" class="post-item">
+          <?= $video ;?>
             <?php if ($imgUrl): ?>
               <img src="<?= $imgUrl ?>" class="post-img"/>
             <?php endif; ?>
-            <?php if ($key !== 0): ?>
+            <?php if ($key !== 0 || $view === 'columns'): ?>
           <div class="pd-1 <?= $key ;?>">
               <?php endif; ?>
               <?php if (get_the_date() && $view === 'metro') : ?>
@@ -41,7 +44,7 @@
                 </div>
               <?php endif; ?>
             <div class="f-600 post-title"><?php the_title(); ?></div>
-              <?php if ($key !== 0): ?>
+              <?php if ($key !== 0 || $view === 'columns'): ?>
           </div>
         <?php endif;
         ?>

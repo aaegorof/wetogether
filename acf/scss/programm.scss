@@ -1,5 +1,5 @@
-@import "vars";
-@import "mixins";
+@import "../../assets/scss/vars";
+@import "../../assets/scss/mixins";
 
 .programm-results {
   @include gap(2, $mg2, '.event-item');

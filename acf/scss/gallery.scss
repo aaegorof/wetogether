@@ -1,0 +1,21 @@
+@import "../../assets/scss/vars";
+
+.gallery-wrap {
+  h2 {
+    text-align: center;
+  }
+  .gallery-list {
+    $maxSize: 160px;
+    display: flex;
+    gap: $mg2;
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
+    img {
+      flex: 1 1 20%;
+      max-height: $maxSize;
+      max-width: $maxSize;
+      object-fit: contain;
+    }
+  }
+}

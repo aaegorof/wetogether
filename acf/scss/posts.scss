@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   gap: $mg2;
   //@include gap(3, $mg2, '*');
+
   .post-item {
     text-decoration: none;
     box-shadow: $shadow;
@@ -16,8 +17,10 @@
     display: block;
     position: relative;
     img {
+
       border-radius: 14px;
       width: 100%;
+      margin-bottom: 12px;
     }
     .date {
       color: $grey-border;
@@ -93,9 +96,6 @@
         $maxWidth: calc((100% - #{$mg2} * 2)/ 4);
         flex: 1 1 $maxWidth;
         max-width: $maxWidth;
-        img {
-          margin-bottom: 12px;
-        }
       }
     }
   }
