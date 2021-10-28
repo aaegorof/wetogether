@@ -62,5 +62,37 @@ let callback = function(entries, observer) {
 const features = document.querySelectorAll('.feature-item.nobg');
 features.forEach(feature => {
   intersect(feature, callback);
-})
+});
 
+
+
+(function($){
+  const openDropdown = (buttonClass, dropDownClass) => {
+    $(buttonClass).click(function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      $(this).children(dropDownClass).toggleClass('opened');
+    }).focusout(function () {
+      $(dropDownClass).removeClass('opened');
+    })
+  };
+  openDropdown('.add-to-calendar', '.add-to-calendar-dropdown');
+  openDropdown('.to-share', '.social-dropdown');
+
+
+  $("#shareIcons").jsSocials({
+    // showLabel: false,
+    // showCount: false,
+    shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+  });
+
+})(jQuery);
+
+
+
+var shareItems = document.querySelectorAll('.social_share');
+for (var i = 0; i < shareItems.length; i += 1) {
+  shareItems[i].addEventListener('click', function share(e) {
+    return JSShare.go(this);
+  });
+}

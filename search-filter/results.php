@@ -26,11 +26,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
-print_r($query);
+
 if ( $query->have_posts() )
 {
     ?>
-
 <section class="container programm-results">
 <!--    Found --><?php //echo $query->found_posts; ?><!-- Results<br />-->
 <!--    Page --><?php //echo $query->query['paged']; ?><!-- of --><?php //echo $query->max_num_pages; ?><!--<br />-->

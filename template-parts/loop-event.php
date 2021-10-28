@@ -29,14 +29,40 @@ $categories = get_the_category()
   <div class="location"><?= $location ;?></div>
   <div class="date"><?= $start_date ;?> – <?= $end_date; ?></div>
   <div class="buttons-row">
-    <button class="add-event-<?= get_the_ID();?>">Добавить в календарь</button>
+    <button class="button primary add-to-calendar add-event-<?= get_the_ID();?>">Добавить в календарь</button>
+    <div class="to-share">
+      <button class="button ghost secondary">Поделиться</button>
+      <div class="social-dropdown">
+        <button class="btn-share social_share fab fa-facebook" data-type="fb"></button>
+        <button class="btn-share social_share fab fa-twitter" data-type="twitter"></button>
+        <button class="btn-share social_share fab fa-vk" data-type="vk"></button>
+        <button class="btn-share social_share fab fa-odnoklassniki" data-type="ok"></button>
+        <!--      <button class="btn-share social_share fab" data-type="mailru">Mail.Ru</button>-->
+        <!--      <button class="btn-share social_share fab" data-type="gplus">Google+</button>-->
+        <!--      <button class="btn-share social_share fab" data-type="googlebookmarks">Google Bookmarks</button>-->
+        <!--      <button class="btn-share social_share fab" data-type="livejournal">LiveJournal</button>-->
+        <!--      <button class="btn-share social_share fab" data-type="tumblr">Tumblr</button>-->
+        <button class="btn-share social_share fab fa-pinterest" data-type="pinterest"></button>
+        <button class="btn-share social_share fab fa-linkedin" data-type="linkedin"></button>
+        <!--      <button class="btn-share social_share fab" data-type="reddit">Reddit</button>-->
+        <!--      <button class="btn-share social_share fab" data-type="weibo">Weibo</button>-->
+        <!--      <button class="btn-share social_share fab" data-type="line">Line.me</button>-->
+        <!--<button class="btn-share social_share fab" data-type="skype">Skype</button>-->
+        <button class="btn-share social_share fab fa-telegram" data-type="telegram"></button>
+        <button class="btn-share social_share fab fa-whatsapp" data-type="whatsapp"></button>
+        <!--      <button class="btn-share social_share fab" data-type="viber">Viber</button>-->
+        <button class="btn-share social_share fab fa-mail-reply" data-type="email"></button>
+      </div>
+    </div>
+
   </div>
 
   <script>
+    // http://carlsednaoui.github.io/add-to-calendar-buttons/
     let calendar<?= get_the_ID();?> = createCalendar({
           options: {
-            class: 'my-class',
-            id: 'my-id'                               // You need to pass an ID. If you don't, one will be generated for you.
+            class: 'add-to-calendar-dropdown',
+            id: 'add-calendar-<?= get_the_ID();?>'       // You need to pass an ID. If you don't, one will be generated for you.
           },
           data: {
             title: "<?php the_title(); ?>",     // Event title

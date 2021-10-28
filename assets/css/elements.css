@@ -1,17 +1,39 @@
-/* Error: Undefined variable.
- *   ,
- * 3 |   border-radius: $radius;
- *   |                  ^^^^^^^
- *   '
- *   elements.scss 3:18  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-  "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 3 \2502    border-radius: $radius;\a   \2502                   ^^^^^^^\a   \2575 \a   elements.scss 3:18  root stylesheet";
+.button {
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid;
+  padding: 1rem 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: 48px;
+  box-sizing: border-box;
+  line-height: 1;
+  white-space: nowrap;
+  background: transparent;
+  font-weight: 600;
+  outline: none;
+  text-decoration: none;
+  font-family: "Euclid Circular B";
 }
+
+.button.primary {
+  background: #EE9252;
+  color: white;
+  border-color: #EE9252;
+}
+
+.button.secondary {
+  background: transparent;
+  color: #000AFF;
+  border-color: #000AFF;
+}
+
+.button.big {
+  height: 65px;
+  padding: 1rem 6em;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=elements.css.map */

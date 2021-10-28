@@ -1,5 +1,10 @@
 @import "vars";
 
+@import "./fontawesome/fontawesome";
+@import "./fontawesome/solid";
+@import "./fontawesome/brands";
+@import "./fontawesome/regular";
+
 @font-face {
   font-family: 'Euclid Circular B';
   src: url('../fonts/EuclidCircularB-Bold.eot');
@@ -122,7 +127,6 @@
 
 
 
-
 @mixin font-face(
   $fontname,
   $filename,
@@ -148,10 +152,12 @@ $fontsPath: "../fonts/FuturaPT";
 @include font-face("FuturaPT", "#{$fontsPath}Bold", normal, 700);
 @include font-face("FuturaPT", "#{$fontsPath}ExtraBold", normal, 900);
 
-body {
-  font-family: $font-family, BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica,sans-serif;
-  font-size: $font-size;
-  line-height: 1.2;
+html {
+  body, button, input {
+    font-family: $font-family, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica, sans-serif;
+    font-size: $font-size;
+    line-height: 1.2;
+  }
 }
 
 p {
@@ -184,6 +190,9 @@ h4, .h4 {
   font-weight: 500;
 }.f-600 {
   font-weight: 600;
+}
+.text-note {
+  color: $grey;
 }
 
 

@@ -16,8 +16,8 @@ $has_social_menu = has_nav_menu( 'social' );
 ?>
 
 
+<div id="shareIcons" class="social-dropdown"></div>
 <footer id="site-footer" role="contentinfo" class="header-footer-group con">
-
   <div class="section-inner container row">
       <?php
       // Site title or logo.

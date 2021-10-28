@@ -56,5 +56,101 @@
 .programm-results .date {
   margin-top: 1rem;
 }
+.programm-results .buttons-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 26px;
+}
+.programm-results .buttons-row > * {
+  flex: 1 1 150px;
+}
+
+.add-to-calendar {
+  position: relative;
+}
+
+.add-to-calendar-dropdown {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 130%;
+  box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #A8B7C3;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.add-to-calendar-dropdown.opened {
+  height: auto;
+  max-height: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+.add-to-calendar-dropdown a {
+  font-size: 12px;
+  height: 24px;
+  color: #000;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.add-to-calendar-dropdown a:last-of-type {
+  margin-bottom: 0;
+}
+.add-to-calendar-dropdown svg {
+  margin-right: 10px;
+}
+
+.to-share {
+  position: relative;
+}
+.to-share .button {
+  width: 100%;
+}
+
+.social-dropdown {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 130%;
+  box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #A8B7C3;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10px;
+}
+.social-dropdown.opened {
+  height: auto;
+  max-height: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+.social-dropdown a {
+  font-size: 12px;
+  height: 24px;
+  color: #000;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.social-dropdown a:last-of-type {
+  margin-bottom: 0;
+}
+.social-dropdown button {
+  font-size: 24px;
+  background: transparent;
+  color: #000;
+}
 
 /*# sourceMappingURL=programm.css.map */

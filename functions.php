@@ -192,7 +192,10 @@ function twentytwenty_register_styles() {
 
 	$theme_version = wp_get_theme()->get( 'Version' );
 
+
 	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
+	wp_enqueue_style( 'jssocials-minima', get_stylesheet_uri() . '/assets/css/jssocials.css', array(), $theme_version );
+	wp_enqueue_style( 'jssocials', get_stylesheet_uri() . '/assets/css/jssocials-theme-minima.css', array(), $theme_version );
 	wp_enqueue_style( 'main', get_template_directory_uri(). '/assets/css/main.css', null, $theme_version );
 	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
 
@@ -221,6 +224,8 @@ function twentytwenty_register_scripts() {
 
 	wp_enqueue_script( 'twentytwenty-js', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false );
 	wp_enqueue_script( 'ouical', get_template_directory_uri() . '/assets/js/ouical.js', array());
+	wp_enqueue_script( 'jssocials', get_template_directory_uri() . '/assets/js/jssocials.min.js', array('jquery'), $theme_version, true);
+	wp_enqueue_script( 'jsshare', get_template_directory_uri() . '/assets/js/jsshare.js', array('jquery'), $theme_version, true);
 	wp_enqueue_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array('ouical', 'jquery'), $theme_version, true);
 	wp_script_add_data( 'twentytwenty-js', 'async', true );
 
@@ -941,3 +946,5 @@ function ics_download() {
 }
 
 add_action( 'template_redirect', 'ics_download' );
+
+add_post_type_support( 'page', 'excerpt' );

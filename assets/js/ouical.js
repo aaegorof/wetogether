@@ -1,18 +1,19 @@
-;(function(exports) {
+;(function (exports) {
   var MS_IN_MINUTES = 60 * 1000;
 
-  var formatTime = function(date) {
-    return date.toISOString().replace(/-|:|\.\d+/g, '');
+  var formatTime = function (date) {
+    let isoDate = date.toISOString();
+    return isoDate.replace(/-|:|\.\d+/g, '');
   };
 
-  var calculateEndTime = function(event) {
+  var calculateEndTime = function (event) {
     return event.end ?
-      formatTime(event.end) :
-      formatTime(new Date(event.start.getTime() + (event.duration * MS_IN_MINUTES)));
+        formatTime(event.end) :
+        formatTime(new Date(event.start.getTime() + (event.duration * MS_IN_MINUTES)));
   };
 
   var calendarGenerators = {
-    google: function(event) {
+    google: function (event) {
       var startTime = formatTime(event.start);
       var endTime = calculateEndTime(event);
 
@@ -27,28 +28,29 @@
         '&sprop=&sprop=name:'
       ].join(''));
       return '<a class="icon-google" target="_blank" href="' +
-        href + '">Google Calendar</a>';
+          href + '"> <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.08068 3.97826C5.58693 3.97826 4.82262 3.41687 4.01774 3.43716C2.95583 3.45069 1.98186 4.05266 1.43399 5.00635C0.331507 6.92048 1.14992 9.74772 2.22535 11.3034C2.75292 12.0609 3.37519 12.9131 4.20036 12.8861C4.99172 12.8523 5.28932 12.372 6.24977 12.372C7.20346 12.372 7.474 12.8861 8.31271 12.8658C9.16494 12.8523 9.70604 12.0947 10.2268 11.3304C10.8288 10.4511 11.0791 9.59892 11.0926 9.55157C11.0723 9.54481 9.43549 8.91578 9.4152 7.02194C9.40167 5.43922 10.7071 4.68169 10.7679 4.64787C10.0239 3.55891 8.88086 3.43716 8.4818 3.41011C7.44019 3.32894 6.56767 3.97826 6.08068 3.97826ZM7.83925 2.38202C8.27889 1.85445 8.56973 1.1172 8.48856 0.386719C7.85954 0.413774 7.102 0.80607 6.64883 1.33364C6.24301 1.80034 5.89129 2.55111 5.98599 3.26807C6.68265 3.32218 7.3996 2.90959 7.83925 2.38202Z" fill="black"/>' +
+          '</svg> Google календарь</a>';
     },
 
-    yahoo: function(event) {
+    yahoo: function (event) {
       var eventDuration = event.end ?
-        ((event.end.getTime() - event.start.getTime())/ MS_IN_MINUTES) :
-        event.duration;
+          ((event.end.getTime() - event.start.getTime()) / MS_IN_MINUTES) :
+          event.duration;
 
       // Yahoo dates are crazy, we need to convert the duration from minutes to hh:mm
       var yahooHourDuration = eventDuration < 600 ?
-        '0' + Math.floor((eventDuration / 60)) :
-        Math.floor((eventDuration / 60)) + '';
+          '0' + Math.floor((eventDuration / 60)) :
+          Math.floor((eventDuration / 60)) + '';
 
       var yahooMinuteDuration = eventDuration % 60 < 10 ?
-        '0' + eventDuration % 60 :
-        eventDuration % 60 + '';
+          '0' + eventDuration % 60 :
+          eventDuration % 60 + '';
 
       var yahooEventDuration = yahooHourDuration + yahooMinuteDuration;
 
       // Remove timezone from event time
       var st = formatTime(new Date(event.start - (event.start.getTimezoneOffset() *
-                                                  MS_IN_MINUTES))) || '';
+          MS_IN_MINUTES))) || '';
 
       var href = encodeURI([
         'http://calendar.yahoo.com/?v=60&view=d&type=20',
@@ -60,57 +62,62 @@
       ].join(''));
 
       return '<a class="icon-yahoo" target="_blank" href="' +
-        href + '">Yahoo! Calendar</a>';
+          href + '">Yahoo! Calendar</a>';
     },
 
-    ics: function(event, eClass, calendarName) {
+    ics: function (event, eClass, calendarName) {
       var startTime = formatTime(event.start);
       var endTime = calculateEndTime(event);
 
       var href = encodeURI(
-        'data:text/calendar;charset=utf8,' + [
-          'BEGIN:VCALENDAR',
-          'VERSION:2.0',
-          'BEGIN:VEVENT',
-          'URL:' + document.URL,
-          'DTSTART:' + (startTime || ''),
-          'DTEND:' + (endTime || ''),
-          'SUMMARY:' + (event.title || ''),
-          'DESCRIPTION:' + (event.description || ''),
-          'LOCATION:' + (event.address || ''),
-          'END:VEVENT',
-          'END:VCALENDAR'].join('\n'));
+          'data:text/calendar;charset=utf8,' + [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'BEGIN:VEVENT',
+            'URL:' + document.URL,
+            'DTSTART:' + (startTime || ''),
+            'DTEND:' + (endTime || ''),
+            'SUMMARY:' + (event.title || ''),
+            'DESCRIPTION:' + (event.description || ''),
+            'LOCATION:' + (event.address || ''),
+            'END:VEVENT',
+            'END:VCALENDAR'].join('\n'));
 
       return '<a class="' + eClass + '" target="_blank" href="' +
-        href + '">' + calendarName + ' Calendar</a>';
+          href + '"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+          '<path d="M13.3878 7.15434C13.3884 6.70005 13.35 6.24655 13.2731 5.79883H6.99219V8.36633H10.5896C10.516 8.7764 10.3602 9.1673 10.1316 9.51548C9.90298 9.86365 9.6063 10.1619 9.25944 10.3922V12.0588H11.4064C12.6635 10.8987 13.3878 9.18297 13.3878 7.15434Z" fill="#4285F4"/>\n' +
+          '<path d="M6.99369 13.6699C8.79102 13.6699 10.3044 13.0791 11.4079 12.0607L9.26094 10.394C8.66337 10.7996 7.89374 11.0311 6.99369 11.0311C5.25648 11.0311 3.78198 9.85887 3.25472 8.2793H1.04297V9.99683C1.59731 11.1009 2.44733 12.0291 3.49813 12.6777C4.54893 13.3263 5.75915 13.6698 6.99369 13.6699Z" fill="#34A853"/>\n' +
+          '<path d="M3.25297 8.27907C2.97423 7.45136 2.97423 6.55501 3.25297 5.7273V4.00977H1.04123C0.574896 4.93858 0.332031 5.96368 0.332031 7.00318C0.332031 8.04269 0.574896 9.06779 1.04123 9.9966L3.25297 8.27907Z" fill="#FBBC04"/>\n' +
+          '<path d="M6.99369 2.97517C7.9435 2.95964 8.86127 3.31884 9.54862 3.97514L11.4496 2.07243C10.2442 0.939203 8.64729 0.317043 6.99369 0.336375C5.75915 0.336431 4.54893 0.679933 3.49813 1.32853C2.44733 1.97713 1.59731 2.90529 1.04297 4.0094L3.25472 5.72693C3.78198 4.14736 5.25648 2.97517 6.99369 2.97517Z" fill="#EA4335"/>\n' +
+          '</svg>\n' + calendarName + ' календарь</a>';
     },
 
-    ical: function(event) {
-      return this.ics(event, 'icon-ical', 'iCal');
+    ical: function (event) {
+      return this.ics(event, 'icon-ical', 'Apple');
     },
 
-    outlook: function(event) {
+    outlook: function (event) {
       return this.ics(event, 'icon-outlook', 'Outlook');
     }
   };
 
-  var generateCalendars = function(event) {
+  var generateCalendars = function (event) {
     return {
       google: calendarGenerators.google(event),
-      yahoo: calendarGenerators.yahoo(event),
+      // yahoo: calendarGenerators.yahoo(event),
       ical: calendarGenerators.ical(event),
-      outlook: calendarGenerators.outlook(event)
+      //outlook: calendarGenerators.outlook(event)
     };
   };
 
   // Create CSS
-  var addCSS = function() {
+  var addCSS = function () {
     if (!document.getElementById('ouical-css')) {
       document.getElementsByTagName('head')[0].appendChild(generateCSS());
     }
   };
 
-  var generateCSS = function() {
+  var generateCSS = function () {
     var styles = document.createElement('style');
     styles.id = 'ouical-css';
 
@@ -120,19 +127,19 @@
   };
 
   // Make sure we have the necessary event data, such as start time and event duration
-  var validParams = function(params) {
+  var validParams = function (params) {
     return params.data !== undefined && params.data.start !== undefined &&
-      (params.data.end !== undefined || params.data.duration !== undefined);
+        (params.data.end !== undefined || params.data.duration !== undefined);
   };
 
-  var generateMarkup = function(calendars, clazz, calendarId) {
+  var generateMarkup = function (calendars, clazz, calendarId) {
     var result = document.createElement('div');
 
-    result.innerHTML = '<label for="checkbox-for-' +
-      calendarId + '" class="add-to-calendar-checkbox">+ Add to my Calendar</label>';
-    result.innerHTML += '<input name="add-to-calendar-checkbox" class="add-to-calendar-checkbox" id="checkbox-for-' + calendarId + '" type="checkbox">';
+    // result.innerHTML = '<label for="checkbox-for-' +
+    //     calendarId + '" class="add-to-calendar-checkbox">+</label>';
+    // result.innerHTML += '<input name="add-to-calendar-checkbox" class="add-to-calendar-checkbox" id="checkbox-for-' + calendarId + '" type="checkbox">';
 
-    Object.keys(calendars).forEach(function(services) {
+    Object.keys(calendars).forEach(function (services) {
       result.innerHTML += calendars[services];
     });
 
@@ -147,26 +154,27 @@
     return result;
   };
 
-  var getClass = function(params) {
+  var getClass = function (params) {
     if (params.options && params.options.class) {
       return params.options.class;
     }
   };
 
-  var getOrGenerateCalendarId = function(params) {
+  var getOrGenerateCalendarId = function (params) {
     return params.options && params.options.id ?
-      params.options.id :
-      Math.floor(Math.random() * 1000000); // Generate a 6-digit random ID
+        params.options.id :
+        Math.floor(Math.random() * 1000000); // Generate a 6-digit random ID
   };
 
-  exports.createCalendar = function(params) {
+  exports.createCalendar = function (params) {
     if (!validParams(params)) {
       console.log('Event details missing.');
       return;
     }
 
-    return generateMarkup(generateCalendars(params.data),
-                          getClass(params),
-                          getOrGenerateCalendarId(params));
+    return generateMarkup(
+        generateCalendars(params.data),
+        getClass(params),
+        getOrGenerateCalendarId(params));
   };
 })(this);

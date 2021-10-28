@@ -1,0 +1,140 @@
+@import "../../assets/scss/vars";
+@import "../../assets/scss/mixins";
+
+.programm-results {
+  @include gap(2, $mg2, '.event-item');
+
+  .event-item {
+    background: white;
+    border-radius: $radius-card;
+    box-shadow: $shadow;
+    padding: $mg2;
+    font-size: 14px;
+
+    .event-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .post-categories {
+      list-style-type: none;
+      margin: 0;
+      margin-bottom: 10px;
+      display: flex;
+
+      li {
+        margin: 0;
+        margin-right: 1rem;
+        padding: 0.4rem 1rem;
+        background: rgba($accent, 5%);
+        color: $accent;
+      }
+    }
+  }
+
+  .speaker-list {
+    display: flex;
+    column-count: 2;
+    column-gap: 10px;
+    margin-top: 10px;
+
+    .speaker {
+      display: inline-flex;
+      color: $secondary;
+      align-items: center;
+      max-width: 50%;
+    }
+
+    img {
+      width: $mg2;
+      height: $mg2;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .location {
+    margin-top: 1rem;
+  }
+
+  .date {
+    margin-top: 1rem;
+  }
+
+  .buttons-row {
+    display: flex;
+    gap: $mg2;
+    margin-top: 26px;
+
+    & > * {
+      flex: 1 1 150px;
+    }
+  }
+}
+
+@mixin mini-dropdown {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 130%;
+  box-shadow: $shadow;
+  padding: 0.5rem 1rem;
+  border-radius: $radius;
+  border: 1px solid $light-grey;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  &.opened {
+    height: auto;
+    max-height: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  a {
+    font-size: 12px;
+    height: 24px;
+    color: $text-color;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.add-to-calendar {
+  position: relative;
+}
+
+.add-to-calendar-dropdown {
+  @include mini-dropdown;
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.to-share {
+  position: relative;
+  .button {
+    width: 100%;
+  }
+}
+.social-dropdown {
+  @include mini-dropdown;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10px;
+  button {
+    font-size: 24px;
+    background: transparent;
+    color: $text-color;
+  }
+}
