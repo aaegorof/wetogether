@@ -1,0 +1,43 @@
+.feature-item {
+  justify-content: center;
+  border-radius: 20px;
+  padding: 45px 0;
+}
+.feature-item h3 {
+  font-size: 28px;
+  margin-bottom: 0.85em;
+}
+.feature-item .button {
+  margin-top: 24px;
+}
+.feature-item > .row {
+  align-items: center;
+}
+.feature-item + .feature-item {
+  margin-top: 90px;
+}
+.feature-item.withbg {
+  background: #fff;
+  box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
+  position: relative;
+  z-index: 20;
+}
+.feature-item.withbg h3 {
+  font-size: 36px;
+}
+.feature-item.withbg .button {
+  margin-top: 32px;
+}
+
+.features-wrap .feature-item.nobg .feature-img {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s opacity ease;
+  pointer-events: none;
+}
+.features-wrap .feature-item:last-of-type {
+  margin-bottom: 45px;
+}
+
+/*# sourceMappingURL=feature.css.map */
