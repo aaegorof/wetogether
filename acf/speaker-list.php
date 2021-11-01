@@ -11,15 +11,15 @@
         $image = get_the_post_thumbnail_url($id);
         $notes = $section['notes'];
     ?>
-    <div class="speaker-card">
+    <a href="<?= get_permalink($speaker->ID) ;?>" class="speaker-card">
       <img src="<?= $image;?>" alt="<?= $name;?>">
       <div class="pd-1-h">
       <div class="speaker-name"><?= $name ;?></div>
       <div class="speaker-description">
-        <?= $speaker->post_content;?>
+        <?= get_field('position', $speaker->ID);?>
       </div>
       </div>
-    </div>
+    </a>
 
   <?php endforeach;?>
   </div>

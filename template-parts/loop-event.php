@@ -6,7 +6,7 @@ $location =get_field('location');
 $categories = get_the_category()
 ?>
 <div class="event-item">
-  <div class="event-title"><?php the_title(); ?></div>
+  <div class="event-title"><a href="<?php the_permalink() ;?>"><?php the_title(); ?></a></div>
   <div class="excerpt"><?php the_excerpt(); ?></div>
 
   <ul class="post-categories">
@@ -19,10 +19,10 @@ $categories = get_the_category()
 
   <div class="speaker-list">
     <?php foreach ($speakers as $speaker):?>
-    <div class="speaker">
+    <a class="speaker" href="<?= get_post_permalink($speaker -> ID) ;?>">
       <img src="<?= get_the_post_thumbnail_url($speaker) ;?>" alt="">
     <?= $speaker->post_title ;?>
-    </div>
+    </a>
     <?php endforeach;?>
   </div>
 

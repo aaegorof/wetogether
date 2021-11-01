@@ -1,4 +1,4 @@
-.button {
+.button, input[type=submit] {
   font-size: 1rem;
   border-radius: 8px;
   border: 1px solid;
@@ -17,20 +17,34 @@
   text-decoration: none;
   font-family: "Euclid Circular B";
 }
-.button.primary {
+.button.primary, input[type=submit].primary {
   background: #EE9252;
   color: white;
   border-color: #EE9252;
 }
-.button.secondary {
+.button.secondary, input[type=submit].secondary {
   background: transparent;
   color: #000AFF;
   border-color: #000AFF;
 }
-.button.big {
+.button.big, input[type=submit].big {
   height: 73px;
   padding: 1rem 6em;
   font-size: 14px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+}
+.meta i, .meta svg {
+  margin-right: 10px;
+  color: #A8B7C3;
+  width: 22px;
+  text-align: center;
+}
+.meta + .meta {
+  margin-top: 24px;
 }
 
 /*# sourceMappingURL=elements.css.map */

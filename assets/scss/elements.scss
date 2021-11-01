@@ -1,6 +1,6 @@
 @import 'vars';
 
-.button {
+.button, input[type=submit] {
   font-size: 1rem;
   border-radius: $radius;
   border: 1px solid;
@@ -32,5 +32,20 @@
     height: $input-height + 25px;
     padding: 1rem 6em;
     font-size: 14px;
+  }
+}
+
+
+.meta {
+  display: flex;
+  align-items: center;
+  i , svg {
+    margin-right: 10px;
+    color: $light-grey;
+    width: 22px;
+    text-align: center;
+  }
+  & + & {
+    margin-top: $mg2;
   }
 }

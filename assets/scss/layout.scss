@@ -6,6 +6,10 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  a {
+    text-decoration: none;
+    color: $primary;
+  }
 }
 
 .slick-slider {
@@ -27,6 +31,11 @@ body {
       }
     }
   }
+}
+.content-nav-wrap {
+  height: 90px;
+  display: flex;
+  align-items: center;
 }
 
 .page-header {
@@ -96,5 +105,20 @@ section {
   color: rgba($text-color, 40%);
   a {
     text-decoration: none;
+  }
+}
+
+
+
+.type-speaker {
+  h1 {
+    margin-top: 0;
+  }
+  aside {
+    box-shadow: $shadow;
+    border-radius: $radius-card;
+  }
+  .description {
+    border-radius: $radius-card;
   }
 }

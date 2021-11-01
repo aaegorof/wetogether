@@ -5,14 +5,17 @@
   flex-wrap: wrap;
   gap: 24px;
 }
+
 .searchandfilter > ul > li {
-  flex: 1 1 calc((100% - 24px* (4 - 1))/ 4);
-  max-width: calc((100% - 24px* (4 - 1))/ 4);
+  flex: 1 1 calc((100% - 24px * (4 - 1)) / 4);
+  max-width: calc((100% - 24px * (4 - 1)) / 4);
 }
+
 .searchandfilter .sf_date_field {
   display: flex;
   gap: 10px;
 }
+
 .searchandfilter .sf_date_field > li {
   padding-top: 0;
 }

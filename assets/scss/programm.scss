@@ -15,6 +15,10 @@
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 10px;
+      a {
+        text-decoration: none;
+        color: $text-color;
+      }
     }
 
     .post-categories {
@@ -44,6 +48,7 @@
       color: $secondary;
       align-items: center;
       max-width: 50%;
+      text-decoration: none;
     }
 
     img {
