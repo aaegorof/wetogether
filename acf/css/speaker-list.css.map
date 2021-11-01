@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../scss/speaker-list.scss","../../assets/scss/vars.scss"],"names":[],"mappings":"AAEE;EACE;EACA;EACA,KCuCE;;ADpCJ;EAEE;EACA;EACA,YCoDK;EDnDL;EACA;EACA,WANW;EAOX,OCXS;;ADYT;EACE;;AAIJ;EACE;EACA","file":"speaker-list.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/speaker-list.scss","../../assets/scss/vars.scss"],"names":[],"mappings":"AAEE;EACE;EACA;EACA,KCuCE;;ADpCJ;EAEE;EACA,eCmDU;EDlDV,YCoDK;EDnDL,SC8BE;ED7BF;EACA,WANW;EAOX,OCXS;;ADYT;EACE;;AAIJ;EACE;EACA","file":"speaker-list.css"}

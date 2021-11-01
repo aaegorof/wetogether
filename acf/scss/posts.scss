@@ -17,23 +17,9 @@
     display: block;
     position: relative;
     img {
-
       border-radius: 14px;
       width: 100%;
       margin-bottom: 12px;
-    }
-    .date {
-      color: $grey-border;
-      display: flex;
-      font-size: 12px;
-      margin-bottom: 12px;
-      align-items: center;
-      svg {
-        margin-right: 10px;
-        width: 16px;
-        height: 16px;
-        fill: $grey-border;
-      }
     }
     .post-title {
       font-size: 16px;

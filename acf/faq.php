@@ -6,7 +6,7 @@
  */
 ?>
 
-<section class="faq-wrap container row">
+<section class="faq-wrap container row" id="faq">
   <div class="col-md-8">
     <?php $faq_list = get_sub_field('faq'); ?>
     <?php $section = get_sub_field('for_section'); ?>

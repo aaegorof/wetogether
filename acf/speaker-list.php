@@ -14,10 +14,10 @@
     <a href="<?= get_permalink($speaker->ID) ;?>" class="speaker-card">
       <img src="<?= $image;?>" alt="<?= $name;?>">
       <div class="pd-1-h">
-      <div class="speaker-name"><?= $name ;?></div>
-      <div class="speaker-description">
-        <?= get_field('position', $speaker->ID);?>
-      </div>
+        <div class="speaker-name"><?= $name ;?></div>
+        <div class="speaker-description">
+          <?= get_field('position', $speaker->ID);?>
+        </div>
       </div>
     </a>
 

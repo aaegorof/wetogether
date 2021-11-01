@@ -11,6 +11,7 @@ $image = $args['feature-image'];
 $link = $args['link'];
 $view = $args['view'];
 ?>
+
 <div class="feature-item row <?= $view ;?>">
   <div class="row col-md-10">
     <div class="col-md-7 pd-md-2-r">

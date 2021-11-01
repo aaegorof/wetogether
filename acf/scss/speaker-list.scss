@@ -9,9 +9,9 @@
   .speaker-card {
     $maxWidth: calc((100% - #{$mg2*3})/4);
     background: white;
-    border-radius: 20px;
+    border-radius: $radius-card;
     box-shadow: $shadow;
-    padding: 12px;
+    padding: $mg1;
     flex: 1 1 $maxWidth;
     max-width: $maxWidth;
     color: $text-color;

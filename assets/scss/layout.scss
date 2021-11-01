@@ -16,7 +16,16 @@ body {
   user-select: auto;
 }
 
+.bg-gradient{
+  background: linear-gradient(0deg, #00000000, white);
+  height: 40vh;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
 #site-header {
+  background: transparent;
   & > .row {
     height: $menu-height;
   }

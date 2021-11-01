@@ -2598,25 +2598,39 @@ th {
   flex-direction: column;
 }
 
+.date {
+  color: #6D7580;
+  display: flex;
+  font-size: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.date svg {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  fill: #6D7580;
+}
+
 .humburger {
   position: relative;
   display: none;
   vertical-align: middle;
-  width: 20px;
-  height: 16px;
+  width: 40px;
+  height: 32px;
   cursor: pointer;
-  padding: 10px;
+  padding: 30px;
   box-sizing: content-box;
 }
 .humburger:after {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 30px;
+  left: 30px;
   display: block;
-  width: calc(100% - 20px);
-  height: 2px;
+  width: calc(100% - 60px);
+  height: 4px;
   background: #000;
-  box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+  box-shadow: 0 16px 0 #000, 0 32px 0 #000;
   content: "";
 }
 
@@ -9044,6 +9058,39 @@ h4, .h4 {
   margin-top: 24px;
 }
 
+.grid-4 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.grid-4 > .card-item {
+  flex: 1 1 calc((100% - 24px* (4 - 1))/ 4);
+  max-width: calc((100% - 24px* (4 - 1))/ 4);
+}
+.grid-4 .card-item {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
+  padding: 12px;
+  color: #000;
+}
+.grid-4 .card-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.grid-4 .card-item img + .metas {
+  margin-top: 12px;
+}
+.grid-4 .card-item .metas > div + div {
+  margin-top: 10px;
+}
+.grid-4 .card-item .name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
 html {
   overflow-x: hidden;
 }
@@ -9063,6 +9110,17 @@ body a {
   user-select: auto;
 }
 
+.bg-gradient {
+  background: linear-gradient(0deg, #00000000, white);
+  height: 40vh;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+#site-header {
+  background: transparent;
+}
 #site-header > .row {
   height: 80px;
 }

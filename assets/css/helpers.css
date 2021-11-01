@@ -1,17 +1,103 @@
-/* Error: Undefined variable.
- *    ,
- * 23 |   color: $grey;
- *    |          ^^^^^
- *    '
- *   helpers.scss 23:10  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-  "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 23 \2502    color: $grey;\a    \2502           ^^^^^\a    \2575 \a   helpers.scss 23:10  root stylesheet";
+.push-right {
+  margin-left: auto;
 }
+
+.push-left {
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.relative {
+  position: relative;
+}
+
+.loader {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #878787;
+}
+
+.bg-mask {
+  width: 100%;
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.bg-mask.bottom {
+  background-position: bottom;
+}
+
+.over-hidden {
+  overflow: hidden;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.centered.column {
+  flex-direction: column;
+}
+
+.date {
+  color: #6D7580;
+  display: flex;
+  font-size: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.date svg {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  fill: #6D7580;
+}
+
+.humburger {
+  position: relative;
+  display: none;
+  vertical-align: middle;
+  width: 40px;
+  height: 32px;
+  cursor: pointer;
+  padding: 30px;
+  box-sizing: content-box;
+}
+.humburger:after {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: block;
+  width: calc(100% - 60px);
+  height: 4px;
+  background: #000;
+  box-shadow: 0 16px 0 #000, 0 32px 0 #000;
+  content: "";
+}
+
+.to-top {
+  transform: rotate(-90deg);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  filter: grayscale(1);
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
+}
+.to-top.shown {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=helpers.css.map */

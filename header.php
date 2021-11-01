@@ -25,6 +25,7 @@
 wp_body_open();
 ?>
 
+<div class="bg-gradient"></div>
 <header id="site-header" class="main-header" role="banner">
   <div class="container row space-between align-center">
     <?php
