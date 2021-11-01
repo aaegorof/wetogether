@@ -2634,30 +2634,66 @@ th {
   opacity: 1;
 }
 
-.input-wrap {
+.input-wrap, .sf-field-search > label, .sf_date_field label, .search-field {
   display: flex;
   align-items: center;
-  position: relative;
-  height: 40px;
-  border: 1px solid #6D7580;
   border-radius: 8px;
   font-weight: 400;
   width: 100%;
 }
-.input-wrap + .input-wrap, .input-wrap + button, .input-wrap + input[type=submit] {
+.input-wrap + .input-wrap, .input-wrap + button, .input-wrap + input[type=submit], .input-wrap + .sf-field-search > label, .sf-field-search > label + button, .sf-field-search > label + input[type=submit], .input-wrap + .sf_date_field label, .sf_date_field label + button, .sf_date_field label + input[type=submit], .input-wrap + .search-field, .search-field + button, .search-field + input[type=submit], .sf-field-search > label + .input-wrap, .sf-field-search > label + .sf-field-search > label, .sf-field-search > label + .sf_date_field label, .sf-field-search > label + .search-field, .sf_date_field label + .input-wrap, .sf_date_field label + .sf-field-search > label, .sf_date_field label + .sf_date_field label, .sf_date_field label + .search-field, .search-field + .input-wrap, .search-field + .sf-field-search > label, .search-field + .sf_date_field label, .search-field + .search-field {
   margin-top: 20px;
 }
-.input-wrap input {
+.input-wrap input, .sf-field-search > label input, .sf_date_field label input, .search-field input {
   padding: 0 1rem;
   border-radius: 8px;
   outline: none;
-  border: none;
   width: 100%;
-  height: 100%;
+  height: 48px;
   color: #000;
+  border: 1px solid #6D7580;
+  font-size: 1rem;
 }
-.input-wrap .input-text {
+.input-wrap input:focus, .sf-field-search > label input:focus, .sf_date_field label input:focus, .search-field input:focus {
+  border-color: #EE9252;
+}
+.input-wrap .input-text, .sf-field-search > label .input-text, .sf_date_field label .input-text, .search-field .input-text {
   margin-bottom: 0.6rem;
+}
+
+.chosen-container {
+  max-width: 100%;
+}
+.chosen-container .chosen-single, .chosen-container .chosen-choices {
+  padding: 0 1rem;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  height: 48px;
+  color: #000;
+  border: 1px solid #6D7580;
+  font-size: 1rem;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+.chosen-container .chosen-single.chosen-container-active.chosen-with-drop, .chosen-container .chosen-choices.chosen-container-active.chosen-with-drop {
+  background: white;
+}
+.chosen-container .chosen-drop {
+  background: white;
+}
+.chosen-container .chosen-drop .chosen-results {
+  display: block;
+}
+.chosen-container .chosen-drop .chosen-results li {
+  height: 40px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.chosen-container .chosen-drop .chosen-results li:hover {
+  background: #A8B7C3;
 }
 
 /*!
@@ -8975,7 +9011,7 @@ h4, .h4 {
   border-color: #000AFF;
 }
 .button.big {
-  height: 65px;
+  height: 73px;
   padding: 1rem 6em;
   font-size: 14px;
 }
@@ -9076,8 +9112,26 @@ section .footer-notes {
   text-decoration: none;
 }
 
-.searchandfilter ul {
+.searchandfilter > ul {
   margin: 0;
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.searchandfilter > ul > li {
+  flex: 1 1 calc((100% - 24px* (4 - 1))/ 4);
+  max-width: calc((100% - 24px* (4 - 1))/ 4);
+}
+.searchandfilter .sf_date_field {
+  display: flex;
+  gap: 10px;
+}
+.searchandfilter .sf_date_field > li {
+  padding-top: 0;
+}
+
+.sf_date_field {
   display: flex;
 }
 

@@ -17,21 +17,18 @@
   text-decoration: none;
   font-family: "Euclid Circular B";
 }
-
 .button.primary {
   background: #EE9252;
   color: white;
   border-color: #EE9252;
 }
-
 .button.secondary {
   background: transparent;
   color: #000AFF;
   border-color: #000AFF;
 }
-
 .button.big {
-  height: 65px;
+  height: 73px;
   padding: 1rem 6em;
   font-size: 14px;
 }

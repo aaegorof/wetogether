@@ -65,7 +65,7 @@ $radius-card: 20px;
 $shadow: 8px 8px 16px 4px rgba(#9098A1, 6%);
 
 $button-height: 48px;
-$input-height: 40px;
+$input-height: $button-height;
 $mobile-menu-height: 60px;
 $menu-height: 80px;
 

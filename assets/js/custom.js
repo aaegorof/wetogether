@@ -80,11 +80,11 @@ features.forEach(feature => {
   openDropdown('.to-share', '.social-dropdown');
 
 
-  $("#shareIcons").jsSocials({
-    // showLabel: false,
-    // showCount: false,
-    shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
-  });
+  // $("#shareIcons").jsSocials({
+  //   // showLabel: false,
+  //   // showCount: false,
+  //   shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+  // });
 
 })(jQuery);
 

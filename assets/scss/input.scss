@@ -1,9 +1,8 @@
-.input-wrap {
+@import "vars";
+
+.input-wrap, .sf-field-search > label, .sf_date_field label, .search-field {
   display: flex;
   align-items: center;
-  position: relative;
-  height: $input-height;
-  border: 1px solid $grey-border;
   border-radius: $radius;
   font-weight: 400;
   width: 100%;
@@ -14,12 +13,54 @@
     padding: 0 1rem;
     border-radius: $radius;
     outline: none;
-    border: none;
     width: 100%;
-    height: 100%;
+    height: $input-height;
     color: $text-color;
+    border: 1px solid $grey-border;
+    font-size: 1rem;
+    &:focus {
+      border-color: $primary;
+    }
   }
   .input-text {
     margin-bottom: 0.6rem;
+  }
+}
+
+
+
+
+.chosen-container  {
+  max-width: 100%;
+  .chosen-single, .chosen-choices{
+    padding: 0 1rem;
+    border-radius: $radius;
+    outline: none;
+    width: 100%;
+    height: $input-height;
+    color: $text-color;
+    border: 1px solid $grey-border;
+    font-size: 1rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    &.chosen-container-active.chosen-with-drop{
+      background: white;
+    }
+  }
+  .chosen-drop {
+    background: white;
+    .chosen-results {
+      display: block;
+      li {
+        height: 40px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        &:hover {
+          background: $light-grey;
+        }
+      }
+    }
   }
 }

@@ -1,6 +1,21 @@
+@import "vars";
+@import "mixins";
+
 .searchandfilter {
-  ul{
+  & > ul{
     margin: 0;
     display: flex;
+    @include gap(4, $mg2, 'li');
   }
+  .sf_date_field {
+    display: flex;
+    gap: 10px;
+    & > li {
+      padding-top: 0;
+    }
+  }
+}
+
+.sf_date_field {
+  display: flex;
 }
