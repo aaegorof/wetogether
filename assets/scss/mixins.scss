@@ -1,3 +1,5 @@
+@import "vars";
+
 @mixin breakpoints($breakpoint, $column) {
   @each $name, $size in $breakpoint {
     @media screen and (min-width: $size) {
@@ -144,3 +146,10 @@
   }
 }
 
+@mixin card($pd: $mg1) {
+  background: white;
+  border-radius: $radius-card;
+  box-shadow: $shadow;
+  padding: $pd;
+  color: $text-color;
+}

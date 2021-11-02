@@ -1,3 +1,5 @@
+@import "vars";
+@import "mixins";
 html {
   overflow-x: hidden;
 }
@@ -116,8 +118,10 @@ section {
     text-decoration: none;
   }
 }
-
-
+.meta-top {
+  padding-bottom: $mg2;
+  border-bottom: 1px solid $light-grey;
+}
 
 .type-speaker {
   h1 {
@@ -129,5 +133,14 @@ section {
   }
   .description {
     border-radius: $radius-card;
+  }
+}
+
+.type-post {
+  aside {
+
+  }
+  .post-body {
+    @include card($mg2);
   }
 }

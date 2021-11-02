@@ -1,17 +1,142 @@
-/* Error: Undefined variable.
- *   ,
- * 5 |   background: $bg-color;
- *   |               ^^^^^^^^^
- *   '
- *   layout.scss 5:15  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 5 \2502    background: $bg-color;\a   \2502                ^^^^^^^^^\a   \2575 \a   layout.scss 5:15  root stylesheet";
+html {
+  overflow-x: hidden;
 }
+
+body {
+  background: #F6F8FB;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body a {
+  text-decoration: none;
+  color: #EE9252;
+}
+
+.slick-slider {
+  user-select: auto;
+}
+
+.bg-gradient {
+  background: linear-gradient(0deg, #00000000, white);
+  height: 40vh;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+#site-header {
+  background: transparent;
+}
+#site-header > .row {
+  height: 80px;
+}
+#site-header .primary-menu-wrapper a {
+  font-size: 1rem;
+  color: #000;
+  margin-right: 24px;
+  text-decoration: none;
+}
+#site-header .primary-menu-wrapper a:hover {
+  text-decoration: none;
+}
+
+.content-nav-wrap {
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.page-header {
+  text-align: center;
+  padding: 1rem 0;
+}
+.page-header h1 {
+  margin-bottom: 20px;
+}
+
+.header-sidebar ul {
+  margin: 0;
+  list-style: none;
+}
+
+section {
+  padding: 45px 0;
+}
+section .section-tile, section h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+section .footer-notes {
+  max-width: 50%;
+}
+
+#site-footer {
+  margin-top: auto;
+  background: #EDF0F3;
+  font-size: 12px;
+}
+#site-footer .social-icons {
+  margin: 0;
+  width: auto;
+}
+#site-footer .social-icons li {
+  margin: 0 0.5rem 0 0;
+}
+#site-footer .social-icons a {
+  background: none;
+  width: auto;
+  height: auto;
+  fill: #EE9252;
+}
+#site-footer .mail-link {
+  color: #000;
+  font-size: 1rem;
+  display: inline-flex;
+  text-decoration: none;
+}
+#site-footer .mail-link:hover {
+  text-decoration: none;
+}
+#site-footer .mail-link svg {
+  margin-right: 5px;
+  fill: #EE9252;
+}
+
+.footer-copyright {
+  background: #E6E9EE;
+  height: 40px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.4);
+}
+.footer-copyright a {
+  text-decoration: none;
+}
+
+.meta-top {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #A8B7C3;
+}
+
+.type-speaker h1 {
+  margin-top: 0;
+}
+.type-speaker aside {
+  box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
+  border-radius: 20px;
+}
+.type-speaker .description {
+  border-radius: 20px;
+}
+
+.type-post .post-body {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
+  padding: 24px;
+  color: #000;
+}
+
+/*# sourceMappingURL=layout.css.map */

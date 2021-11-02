@@ -9,7 +9,11 @@ $withDate = $args['withDate'];
         <?php endif;?>
         <div class="name"><?php the_title() ;?></div>
         <div class="description">
-            <?= get_field('position');?>
+            <?php if($withDate){
+              the_excerpt();
+            } else {
+                the_field('position');
+            }?>
         </div>
     </div>
 </a>
