@@ -68,17 +68,29 @@ features.forEach(feature => {
 
 (function($){
   const openDropdown = (buttonClass, dropDownClass) => {
+    // $(document).on( 'click', e=> {
+    //   console.log(e.target, $(dropDownClass))
+    //   if (!e.target === $(dropDownClass) // if the target of the click isn't the container...
+    //       && $(dropDownClass).has(e.target).length === 0) // ... nor a descendant of the container
+    //   {
+    //     $(dropDownClass).removeClass('opened');
+    //   }
+    // });
     $(buttonClass).click(function (e) {
-      e.preventDefault();
       e.stopPropagation();
-      $(this).children(dropDownClass).toggleClass('opened');
-    }).focusout(function () {
+      $(this).children(dropDownClass).on('click',function (e) {
+        e.stopPropagation();
+      }).toggleClass('opened');
+    }).focusout(function (e) {
       $(dropDownClass).removeClass('opened');
-    })
+    });
   };
+
   openDropdown('.add-to-calendar', '.add-to-calendar-dropdown');
   openDropdown('.to-share', '.social-dropdown');
 
+
+  $('.tab-menu a').tab();
 
   // $("#shareIcons").jsSocials({
   //   // showLabel: false,

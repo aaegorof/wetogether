@@ -131,6 +131,10 @@ section .footer-notes {
   border-radius: 20px;
 }
 
+.single-event h1 {
+  margin-top: 0;
+}
+
 .type-post .post-body {
   background: white;
   border-radius: 20px;

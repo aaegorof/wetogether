@@ -26,8 +26,9 @@ $categories = get_the_category()
     <?php endforeach;?>
   </div>
 
-  <div class="location"><?= $location ;?></div>
-  <div class="date"><?= $start_date ;?> – <?= $end_date; ?></div>
+  <div class="meta location mg-2-t"><i class="fa fa-calendar-alt"></i> <?= $location ;?></div>
+  <div class="meta"><i class="fa fa-map-marker-alt"></i> <?= $start_date ;?> – <?= $end_date; ?></div>
+
   <div class="buttons-row">
     <button class="button primary add-to-calendar add-event-<?= get_the_ID();?>">Добавить в календарь</button>
     <div class="to-share">

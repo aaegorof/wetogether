@@ -35,6 +35,11 @@
     font-size: 14px;
   }
 }
+input[type=submit]{
+  background: $primary;
+  color: white;
+  border-color: $primary;
+}
 
 
 .meta {
@@ -49,6 +54,10 @@
   & + & {
     margin-top: $mg2;
   }
+}
+
+.card {
+  @include card($mg2);
 }
 
 .grid-4 {

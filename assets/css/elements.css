@@ -33,6 +33,12 @@
   font-size: 14px;
 }
 
+input[type=submit] {
+  background: #EE9252;
+  color: white;
+  border-color: #EE9252;
+}
+
 .meta {
   display: flex;
   align-items: center;
@@ -45,6 +51,14 @@
 }
 .meta + .meta {
   margin-top: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
+  padding: 24px;
+  color: #000;
 }
 
 .grid-4 {

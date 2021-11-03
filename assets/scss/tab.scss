@@ -1,0 +1,24 @@
+@import "vars";
+
+.tab-menu {
+  background: white;
+  padding: 4px;
+  display: inline-flex;
+  border-radius: $radius;
+  a {
+    height: $input-height;
+    min-width: 200px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius;
+    font-size: 16px;
+    color: $grey;
+    cursor: pointer;
+    &.active {
+      background: $primary;
+      color: white;
+      cursor: initial;
+    }
+  }
+}

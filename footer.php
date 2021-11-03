@@ -15,7 +15,7 @@
 $has_social_menu = has_nav_menu( 'social' );
 ?>
 
-<footer id="site-footer" role="contentinfo" class="header-footer-group con">
+<footer id="site-footer" role="contentinfo" class="header-footer-group mg-4-t">
   <div class="section-inner container row">
       <?php
       // Site title or logo.

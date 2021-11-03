@@ -3,114 +3,72 @@
 
 .programm-results {
   @include gap(2, $mg2, '.event-item');
+}
 
-  .event-item {
-    background: white;
-    border-radius: $radius-card;
-    box-shadow: $shadow;
-    padding: $mg2;
-    font-size: 14px;
+.buttons-row {
+  display: flex;
+  gap: $mg2;
+  margin-top: 26px;
 
-    .event-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      a {
-        text-decoration: none;
-        color: $text-color;
-      }
-    }
-
-    .post-categories {
-      list-style-type: none;
-      margin: 0;
-      margin-bottom: 10px;
-      display: flex;
-
-      li {
-        margin: 0;
-        margin-right: 1rem;
-        padding: 0.4rem 1rem;
-        background: rgba($accent, 5%);
-        color: $accent;
-      }
-    }
+  & > * {
+    flex: 1 1 150px;
   }
+}
 
-  .speaker-list {
-    display: flex;
-    column-count: 2;
-    column-gap: 10px;
-    margin-top: 10px;
 
-    .speaker {
-      display: inline-flex;
-      color: $secondary;
-      align-items: center;
-      max-width: 50%;
+.event-item {
+  background: white;
+  border-radius: $radius-card;
+  box-shadow: $shadow;
+  padding: $mg2;
+  font-size: 14px;
+
+  .event-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    a {
       text-decoration: none;
-    }
-
-    img {
-      width: $mg2;
-      height: $mg2;
-      border-radius: 50%;
-      margin-right: 0.5rem;
+      color: $text-color;
     }
   }
 
-  .location {
-    margin-top: 1rem;
-  }
-
-  .date {
-    margin-top: 1rem;
-  }
-
-  .buttons-row {
+  .post-categories {
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 10px;
     display: flex;
-    gap: $mg2;
-    margin-top: 26px;
 
-    & > * {
-      flex: 1 1 150px;
+    li {
+      margin: 0;
+      margin-right: 1rem;
+      padding: 0.4rem 1rem;
+      background: rgba($accent, 5%);
+      color: $accent;
     }
   }
 }
 
-@mixin mini-dropdown {
-  background: #fff;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  top: 130%;
-  box-shadow: $shadow;
-  padding: 0.5rem 1rem;
-  border-radius: $radius;
-  border: 1px solid $light-grey;
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
+.speaker-list {
+  display: flex;
+  column-count: 2;
+  column-gap: 10px;
+  margin-top: 10px;
 
-  &.opened {
-    height: auto;
-    max-height: none;
-    opacity: 1;
-    pointer-events: auto;
+  .speaker {
+    display: inline-flex;
+    color: $secondary;
+    align-items: center;
+    max-width: 50%;
+    text-decoration: none;
   }
 
-  a {
-    font-size: 12px;
-    height: 24px;
-    color: $text-color;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+  img {
+    width: $mg2;
+    height: $mg2;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    object-fit: cover;
   }
 }
 
