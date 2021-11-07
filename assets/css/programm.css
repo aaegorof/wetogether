@@ -75,22 +75,11 @@
 .add-to-calendar-dropdown {
   background: #fff;
   position: absolute;
-  left: 0;
-  width: 100%;
-  top: 130%;
   box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1px solid #A8B7C3;
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-.add-to-calendar-dropdown.opened {
-  height: auto;
-  max-height: none;
-  opacity: 1;
-  pointer-events: auto;
+  position: relative;
 }
 .add-to-calendar-dropdown a {
   font-size: 12px;
@@ -118,25 +107,13 @@
 .social-dropdown {
   background: #fff;
   position: absolute;
-  left: 0;
-  width: 100%;
-  top: 130%;
   box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1px solid #A8B7C3;
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0 10px;
-}
-.social-dropdown.opened {
-  height: auto;
-  max-height: none;
-  opacity: 1;
-  pointer-events: auto;
 }
 .social-dropdown a {
   font-size: 12px;

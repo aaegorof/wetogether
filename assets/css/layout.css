@@ -13,6 +13,26 @@ body a {
   color: #EE9252;
 }
 
+.primary-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.primary-menu a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  text-decoration: none;
+}
+.primary-menu a:hover {
+  text-decoration: none;
+}
+.primary-menu .pll-parent-menu-item img {
+  width: 24px;
+  margin: 0;
+  display: inline;
+}
+
 .slick-slider {
   user-select: auto;
 }
@@ -28,17 +48,16 @@ body a {
 #site-header {
   background: transparent;
 }
+#site-header .primary-menu .sub-menu {
+  background: white;
+  position: absolute;
+  display: none;
+}
+#site-header .primary-menu a {
+  color: #000;
+}
 #site-header > .row {
   height: 80px;
-}
-#site-header .primary-menu-wrapper a {
-  font-size: 1rem;
-  color: #000;
-  margin-right: 24px;
-  text-decoration: none;
-}
-#site-header .primary-menu-wrapper a:hover {
-  text-decoration: none;
 }
 
 .content-nav-wrap {

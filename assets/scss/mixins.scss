@@ -158,23 +158,23 @@
 @mixin mini-dropdown {
   background: #fff;
   position: absolute;
-  left: 0;
-  width: 100%;
-  top: 130%;
+  //left: 0;
+  //width: 100%;
+  //top: 130%;
   box-shadow: $shadow;
   padding: 0.5rem 1rem;
   border-radius: $radius;
   border: 1px solid $light-grey;
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
+  //max-height: 0;
+  //opacity: 0;
+  //pointer-events: none;
 
-  &.opened {
-    height: auto;
-    max-height: none;
-    opacity: 1;
-    pointer-events: auto;
-  }
+  //&.opened {
+  //  height: auto;
+  //  max-height: none;
+  //  opacity: 1;
+  //  pointer-events: auto;
+  //}
 
   a {
     font-size: 12px;

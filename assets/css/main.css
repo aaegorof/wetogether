@@ -9155,6 +9155,26 @@ body a {
   color: #EE9252;
 }
 
+.primary-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.primary-menu a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  text-decoration: none;
+}
+.primary-menu a:hover {
+  text-decoration: none;
+}
+.primary-menu .pll-parent-menu-item img {
+  width: 24px;
+  margin: 0;
+  display: inline;
+}
+
 .slick-slider {
   user-select: auto;
 }
@@ -9170,17 +9190,16 @@ body a {
 #site-header {
   background: transparent;
 }
+#site-header .primary-menu .sub-menu {
+  background: white;
+  position: absolute;
+  display: none;
+}
+#site-header .primary-menu a {
+  color: #000;
+}
 #site-header > .row {
   height: 80px;
-}
-#site-header .primary-menu-wrapper a {
-  font-size: 1rem;
-  color: #000;
-  margin-right: 24px;
-  text-decoration: none;
-}
-#site-header .primary-menu-wrapper a:hover {
-  text-decoration: none;
 }
 
 .content-nav-wrap {
@@ -9385,22 +9404,11 @@ section .footer-notes {
 .add-to-calendar-dropdown {
   background: #fff;
   position: absolute;
-  left: 0;
-  width: 100%;
-  top: 130%;
   box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1px solid #A8B7C3;
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-.add-to-calendar-dropdown.opened {
-  height: auto;
-  max-height: none;
-  opacity: 1;
-  pointer-events: auto;
+  position: relative;
 }
 .add-to-calendar-dropdown a {
   font-size: 12px;
@@ -9428,25 +9436,13 @@ section .footer-notes {
 .social-dropdown {
   background: #fff;
   position: absolute;
-  left: 0;
-  width: 100%;
-  top: 130%;
   box-shadow: 8px 8px 16px 4px rgba(144, 152, 161, 0.06);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   border: 1px solid #A8B7C3;
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0 10px;
-}
-.social-dropdown.opened {
-  height: auto;
-  max-height: none;
-  opacity: 1;
-  pointer-events: auto;
 }
 .social-dropdown a {
   font-size: 12px;

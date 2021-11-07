@@ -78,7 +78,7 @@
 
 .add-to-calendar-dropdown {
   @include mini-dropdown;
-
+  position: relative;
   svg {
     margin-right: 10px;
   }
