@@ -3,7 +3,7 @@ $speakers =get_field('event-speakers');
 $start_date =get_field('start_date');
 $end_date =get_field('end_date');
 $location =get_field('location');
-$categories = get_the_category()
+$categories = get_the_category();
 ?>
 <div class="event-item">
   <div class="event-title"><a href="<?php the_permalink() ;?>"><?php the_title(); ?></a></div>

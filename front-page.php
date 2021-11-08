@@ -23,6 +23,5 @@ get_header();
   endif; ?>
     <?php the_content(); ?>
 </section>
-<?php get_template_part('template-parts/forms') ;?>
 
 <?php get_footer(); ?>

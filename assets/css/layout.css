@@ -38,7 +38,7 @@ body a {
 }
 
 .bg-gradient {
-  background: linear-gradient(0deg, #00000000, white);
+  background: linear-gradient(0deg, #F6F8FB, white);
   height: 40vh;
   position: absolute;
   width: 100%;
@@ -46,7 +46,8 @@ body a {
 }
 
 #site-header {
-  background: transparent;
+  background: white;
+  z-index: 30;
 }
 #site-header .primary-menu .sub-menu {
   background: white;

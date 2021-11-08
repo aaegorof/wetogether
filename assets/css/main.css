@@ -403,6 +403,83 @@ th {
   padding: 0;
 }
 
+section.anima {
+  position: relative;
+  background: #fff;
+}
+section.anima .hero-bg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+section.anima img {
+  position: relative;
+}
+section.anima .img-left {
+  float: left;
+  transform: translateX(-30px) translateY(0);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.3s;
+}
+section.anima .img-left.animated {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+section.anima .img-right {
+  float: right;
+  transform: translateX(30px) translateY(0);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.3s;
+}
+section.anima .img-right.animated {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+section.anima .hero-about {
+  position: absolute;
+  left: 50%;
+  max-width: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+}
+section.anima .hero-about i {
+  margin-right: 10px;
+}
+section.anima .hero-about h1 {
+  transition-delay: 0.3s;
+}
+section.anima .hero-about .hero-location {
+  transition-delay: 0.5s;
+}
+section.anima .hero-about .hero-date {
+  transition-delay: 0.5s;
+}
+section.anima .hero-about > * {
+  transform: translateX(0) translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+section.anima .hero-about > *.animated {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+section.anima .button {
+  margin-top: 32px;
+}
+section.anima:first-child {
+  margin-top: -45px;
+  padding-top: 60px;
+  z-index: 20;
+}
+section.anima:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 .container {
   max-width: 1320px;
   margin-left: auto;
@@ -9180,7 +9257,7 @@ body a {
 }
 
 .bg-gradient {
-  background: linear-gradient(0deg, #00000000, white);
+  background: linear-gradient(0deg, #F6F8FB, white);
   height: 40vh;
   position: absolute;
   width: 100%;
@@ -9188,7 +9265,8 @@ body a {
 }
 
 #site-header {
-  background: transparent;
+  background: white;
+  z-index: 30;
 }
 #site-header .primary-menu .sub-menu {
   background: white;
@@ -9475,7 +9553,8 @@ section .footer-notes {
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
+  padding: 1rem;
   color: #878787;
   cursor: pointer;
 }

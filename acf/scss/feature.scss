@@ -1,15 +1,31 @@
 @import "../../assets/scss/vars";
 
+.feature-wrap {
+  .left-svg {
+    position: absolute;
+    z-index: -1;
+  }
+  .right-svg {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+  }
+}
 .feature-item {
   justify-content: center;
   border-radius: $radius-card;
   padding: 45px 0;
+  position: relative;
   h3 {
     font-size: 28px;
     margin-bottom: 0.85em;
+    font-weight: 600;
   }
   .button {
     margin-top: 24px;
+    & + .button {
+      margin-left: 1rem;
+    }
   }
   & > .row {
     align-items: center;

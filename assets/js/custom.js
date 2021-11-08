@@ -65,7 +65,6 @@ let animateCb = function(entries, observer) {
     } else {
       target.classList.remove('animated');
     }
-    console.log(intersectionRatio, target)
   })
 };
 
@@ -86,9 +85,7 @@ function animateThings(){
   });
 }
 
-setTimeout(
-    animateThings, 500
-)
+setTimeout(animateThings, 500);
 
 
 
@@ -122,6 +119,12 @@ setTimeout(
   $('.pll-parent-menu-item .sub-menu').addClass('menu ui');
   $('.pll-parent-menu-item .sub-menu li').addClass('item');
   $('.pll-parent-menu-item').dropdown();
+  $('.ui.modal').modal();
+  $('a[href^="#modal"]').click(function (e) {
+    e.preventDefault();
+    const targetId = $(this).attr('href').split('-').slice(1).join('-');
+    $('#' +targetId).modal('show');
+  });
   // $("#shareIcons").jsSocials({
   //   // showLabel: false,
   //   // showCount: false,

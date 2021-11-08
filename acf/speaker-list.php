@@ -1,23 +1,30 @@
-<?php $speakers = get_sub_field('speakers'); ?>
-<?php $section = get_sub_field('for_section'); ?>
+<?php
+$speakers = get_sub_field('speakers');
+$section = get_sub_field('for_section');
+$notes = $section['notes'];
+?>
 
-<section class="speakers-wrap container">
+<section class="speakers-wrap container" id="speakers">
   <h2><?php echo $section['title']; ?></h2>
   <div class="speakers-list">
     <?php foreach ($speakers as $speaker) : ?>
     <?php
+
         $id =  $speaker->ID;
         $name = $speaker->post_title;
         $image = get_the_post_thumbnail_url($id);
-        $notes = $section['notes'];
+        $position = get_field('position', $speaker->ID);
     ?>
     <a href="<?= get_permalink($speaker->ID) ;?>" class="speaker-card">
       <img src="<?= $image;?>" alt="<?= $name;?>">
       <div class="pd-1-h">
         <div class="speaker-name"><?= $name ;?></div>
-        <div class="speaker-description">
-          <?= get_field('position', $speaker->ID);?>
+        <?php if($position): ?>
+        <div class="meta speaker-description">
+          <i class="fa fa-briefcase" style="color: #000;"></i>
+          <?= $position; ?>
         </div>
+        <?php endif;?>
       </div>
     </a>
 

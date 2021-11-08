@@ -6,7 +6,7 @@
  */
 ?>
 
-<section class="topics-wrap container">
+<section class="topics-wrap container" id="topics">
     <?php $topics = get_sub_field('topics'); ?>
     <?php $section = get_sub_field('for_section'); ?>
     <?php $notes = $section['notes'] ;?>

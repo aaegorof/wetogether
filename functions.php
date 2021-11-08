@@ -196,10 +196,12 @@ function twentytwenty_register_styles() {
 	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
 //	wp_enqueue_style( 'jssocials-minima', get_stylesheet_uri() . '/assets/css/jssocials.css', array(), $theme_version );
 //	wp_enqueue_style( 'jssocials', get_stylesheet_uri() . '/assets/css/jssocials-theme-minima.css', array(), $theme_version );
-	wp_enqueue_style( 'sematic-dropdown', get_template_directory_uri(). '/assets/vendor/dropdown.css', null, $theme_version );
-	wp_enqueue_style( 'sematic-tab', get_template_directory_uri(). '/assets/vendor/tab.css', null, $theme_version );
-	wp_enqueue_style( 'sematic-menu', get_template_directory_uri(). '/assets/vendor/menu.css', null, $theme_version );
-	wp_enqueue_style( 'sematic-transition', get_template_directory_uri(). '/assets/vendor/transition.css', null, $theme_version );
+	wp_enqueue_style( 'semantic-dropdown', get_template_directory_uri(). '/assets/vendor/dropdown.css', null, $theme_version );
+	wp_enqueue_style( 'semantic-tab', get_template_directory_uri(). '/assets/vendor/tab.css', null, $theme_version );
+	wp_enqueue_style( 'semantic-menu', get_template_directory_uri(). '/assets/vendor/menu.css', null, $theme_version );
+	wp_enqueue_style( 'semantic-transition', get_template_directory_uri(). '/assets/vendor/transition.css', null, $theme_version );
+	wp_enqueue_style( 'semantic-dimmer', get_template_directory_uri(). '/assets/vendor/dimmer.css', null, $theme_version );
+	wp_enqueue_style( 'semantic-modal', get_template_directory_uri(). '/assets/vendor/modal.css', null, $theme_version );
 	wp_enqueue_style( 'main', get_template_directory_uri(). '/assets/css/main.css', null, $theme_version );
 	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
 
@@ -231,7 +233,8 @@ function twentytwenty_register_scripts() {
 	wp_enqueue_script( 'semantic-tab', get_template_directory_uri() . '/assets/vendor/tab.js', array('jquery'));
 	wp_enqueue_script( 'semantic-transition', get_template_directory_uri() . '/assets/vendor/transition.js', array('jquery'));
 	wp_enqueue_script( 'semantic-dropdown', get_template_directory_uri() . '/assets/vendor/dropdown.js', array('jquery'));
-
+	wp_enqueue_script( 'semantic-dimmer', get_template_directory_uri() . '/assets/vendor/dimmer.js', array('jquery'));
+	wp_enqueue_script( 'semantic-modal', get_template_directory_uri() . '/assets/vendor/modal.js', array('jquery'));
 
 //	wp_enqueue_script( 'jssocials', get_template_directory_uri() . '/assets/js/jssocials.min.js', array('jquery'), $theme_version, true);
 	wp_enqueue_script( 'jsshare', get_template_directory_uri() . '/assets/js/jsshare.js', array('jquery'), $theme_version, true);
