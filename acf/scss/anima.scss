@@ -1,0 +1,57 @@
+@import "../../assets/scss/mixins";
+
+section.anima {
+  position: relative;
+  background: #fff;
+  .hero-bg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  img {
+    position: relative;
+  }
+  .img-left {
+    float: left;
+    @include transition($delay: 0.3s);
+  }
+  .img-right {
+    float: right;
+    @include transition(30px, $delay: 0.3s);
+  }
+  .hero-about {
+    position: absolute;
+    left: 50%;
+    max-width: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    i {
+      margin-right: 10px;
+    }
+    h1 {
+      transition-delay: 0.3s;
+    }
+    .hero-location {
+      transition-delay: 0.5s;
+    }
+    .hero-date {
+      transition-delay: 0.5s;
+    }
+    & > * {
+      @include transition(0, 20px);
+    }
+  }
+  .button {
+    margin-top: 32px;
+  }
+  &:first-child{
+    margin-top: -45px;
+    padding-top: 60px;
+    z-index: 20;
+  }
+  &:after{
+    content: '';
+    clear: both;
+    display: block;
+  }
+}

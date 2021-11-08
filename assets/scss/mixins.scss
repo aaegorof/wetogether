@@ -190,3 +190,14 @@
     }
   }
 }
+
+@mixin transition($x: -30px, $y: 0, $delay: 0.1s) {
+  transform: translateX($x) translateY($y);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transition-delay: $delay;
+  &.animated {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}

@@ -1,6 +1,7 @@
 @import "vars";
 @import "reset";
 @import "mixins";
+@import "../../acf/scss/anima"; // need it here for first render
 @import "grid";
 @include breakpoints($breakpoints, $columns);
 @include margins($breakpoints, $margins);

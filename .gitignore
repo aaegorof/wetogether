@@ -10,6 +10,8 @@ wp-content/*
 
 assets/css/*
 acf/css/*
+/acf/css/*
+/assets/css/*
 
 # ignore these plugins
 wp-content/plugins/hello.php
@@ -24,3 +26,4 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+

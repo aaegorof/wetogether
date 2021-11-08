@@ -51,18 +51,45 @@ function intersect(target, callback){
   observer.observe(target);
 }
 
-let callback = function(entries, observer) {
+let featureIntersectCb = function(entries, observer) {
   entries.forEach(({intersectionRatio, target}) => {
     const img = target.querySelector('.feature-img');
     img.style.opacity = Math.round(intersectionRatio * 100)/100;
     //console.log(intersectionRatio, target)
   })
 };
+let animateCb = function(entries, observer) {
+  entries.forEach(({intersectionRatio, target}) => {
+    if(intersectionRatio > 0) {
+      target.classList.add('animated');
+    } else {
+      target.classList.remove('animated');
+    }
+    console.log(intersectionRatio, target)
+  })
+};
 
 const features = document.querySelectorAll('.feature-item.nobg');
+const toAnimate = document.querySelectorAll('.to-animate');
 features.forEach(feature => {
-  intersect(feature, callback);
+  intersect(feature, featureIntersectCb);
 });
+
+function animateThings(){
+  toAnimate.forEach(animElem => {
+    let observer = new IntersectionObserver(animateCb, {
+      rootMargin: '-20% 0px -20% 0px',
+      threshold: [0, 0.2, 1]
+    });
+    // let target = document.querySelector(query);
+    observer.observe(animElem);
+  });
+}
+
+setTimeout(
+    animateThings, 500
+)
+
 
 
 
