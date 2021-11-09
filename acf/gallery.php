@@ -6,15 +6,25 @@
  */
 ?>
 
-    <?php $gallery = get_sub_field('galaereya'); ?>
-    <?php $section = get_sub_field('for_section'); ?>
-    <?php $notes = $section['notes'] ;?>
+<?php $gallery = get_sub_field('galaereya'); ?>
+<?php $section = get_sub_field('for_section'); ?>
+<?php $notes = $section['notes']; ?>
 <section class="gallery-wrap container">
   <h2><?php echo $section['title']; ?></h2>
   <div class="gallery-list">
-  <?php foreach ($gallery as $url) :?>
-    <img src="<?= $url ;?>" />
-  <?php endforeach;?>
+      <?php foreach ($gallery as $img) : ?>
+          <?php
+          $imgUrl = $img['url'];
+          $href = $img['alt'];
+          ?>
+          <?php if ($href): ?>
+          <a href="<?= $href; ?>" target="_blank">
+          <?php endif; ?>
+        <img src="<?= $imgUrl; ?>"/>
+          <?php if ($href): ?>
+          </a>
+          <?php endif; ?>
+      <?php endforeach; ?>
   </div>
     <?php if ($section['link']): ?>
       <div class="row centered mg-3-t">
