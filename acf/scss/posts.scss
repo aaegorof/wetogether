@@ -86,3 +86,24 @@
     }
   }
 }
+
+@media screen and (max-width: $sm - 1px){
+  .post-list {
+    .post-item {
+      iframe {
+        width: 100% !important;
+        height: 180px !important;
+      }
+    }
+    &.metro > .post-item, .post-tail {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex-basis: 100% !important;
+    }
+    &.columns > .post-item {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex-basis: 100% !important;
+    }
+  }
+}

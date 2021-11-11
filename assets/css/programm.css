@@ -58,6 +58,7 @@
   color: #000AFF;
   align-items: center;
   max-width: 50%;
+  border-radius: 8px;
   text-decoration: none;
 }
 .speaker-list img {
@@ -131,6 +132,21 @@
   font-size: 24px;
   background: transparent;
   color: #000;
+}
+
+@media screen and (max-width: 425px) {
+  .programm-results > .event-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .speaker-list .speaker {
+    font-size: 10px;
+  }
+
+  .event-item .post-categories li {
+    font-size: 10px;
+  }
 }
 
 /*# sourceMappingURL=programm.css.map */

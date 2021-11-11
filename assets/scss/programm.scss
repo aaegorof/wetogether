@@ -60,6 +60,7 @@
     color: $secondary;
     align-items: center;
     max-width: 50%;
+    border-radius: $radius;
     text-decoration: none;
   }
 
@@ -99,5 +100,27 @@
     font-size: 24px;
     background: transparent;
     color: $text-color;
+  }
+}
+
+
+@media screen and (max-width: $sm - 1px){
+  .programm-results {
+   & > .event-item {
+     width: 100%;
+     max-width: 100%;
+   }
+  }
+  .speaker-list {
+    .speaker {
+      font-size: 10px;
+    }
+  }
+  .event-item {
+    .post-categories {
+      li {
+        font-size: 10px;
+      }
+    }
   }
 }

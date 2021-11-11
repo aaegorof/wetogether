@@ -36,4 +36,17 @@
   transition: all 0.2s ease-in-out;
 }
 
+@media screen and (max-width: 425px) {
+  .faq-wrap .faq-answer {
+    font-size: inherit;
+  }
+  .faq-wrap .faq-title {
+    font-size: 16px;
+  }
+  .faq-wrap .faq-title svg {
+    min-width: 18px;
+    padding-left: 10px;
+  }
+}
+
 /*# sourceMappingURL=faq.css.map */

@@ -12,5 +12,13 @@ section.topics-wrap .topic-item {
 section.topics-wrap .topic-icon {
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 425px) {
+  section.topics-wrap {
+    column-gap: 0;
+  }
+  section.topics-wrap .topic-item {
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=topics.css.map */

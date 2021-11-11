@@ -81,4 +81,21 @@
   max-width: calc((100% - 24px * 2) / 4);
 }
 
+@media screen and (max-width: 425px) {
+  .post-list .post-item iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+  .post-list.metro > .post-item, .post-list .post-tail {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-basis: 100% !important;
+  }
+  .post-list.columns > .post-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
+
 /*# sourceMappingURL=posts.css.map */

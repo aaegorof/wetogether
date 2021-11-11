@@ -198,14 +198,22 @@ h4, .h4 {
 
 $sm: nth(nth($breakpoints, 2),2);
 
-@media screen and (max-width: $sm) {
-  h1 {
-    font-size: 35px;
-  }
-  h2, .h2 {
-    font-size: 22px;
-  }
-  h4, .h4 {
-    font-size: 18px;
+@media screen and (max-width: $sm - 1px ) {
+  html {
+    body {
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: 35px;
+    }
+
+    h2, .h2 {
+      font-size: 22px;
+    }
+
+    h4, .h4 {
+      font-size: 18px;
+    }
   }
 }

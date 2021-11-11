@@ -3,16 +3,23 @@
 }
 .gallery-wrap .gallery-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
   align-items: center;
   justify-content: space-around;
   justify-items: center;
 }
-.gallery-wrap .gallery-list img {
+.gallery-wrap .gallery-list img, .gallery-wrap .gallery-list a {
   flex: 1 1 20%;
   max-height: 160px;
   max-width: 160px;
   object-fit: contain;
+}
+
+@media screen and (max-width: 425px) {
+  .gallery-wrap .gallery-list img, .gallery-wrap .gallery-list a {
+    flex: 1 1 50%;
+  }
 }
 
 /*# sourceMappingURL=gallery.css.map */

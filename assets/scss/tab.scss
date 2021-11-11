@@ -22,4 +22,11 @@
       cursor: initial;
     }
   }
+  @media screen and (max-width: $sm - 1px){
+    a {
+      min-width: 0;
+      font-size: inherit;
+      min-height: 36px;
+    }
+  }
 }

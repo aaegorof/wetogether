@@ -1,7 +1,8 @@
-section.topics-wrap {
+@import "../../assets/scss/vars";
 
+section.topics-wrap {
   .topics {
-    row-gap: 24px;
+    row-gap: $mg2;
     column-gap: 2%;
   }
   .topic-title {
@@ -14,5 +15,11 @@ section.topics-wrap {
 
   .topic-icon {
     margin-bottom: 1rem;
+  }
+  @media screen and (max-width: $sm - 1px){
+    column-gap: 0;
+    .topic-item {
+      width: 100%;
+    }
   }
 }

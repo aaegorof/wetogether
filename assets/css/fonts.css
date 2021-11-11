@@ -81,7 +81,6 @@
   margin-left: 2.5em;
   padding-left: 0;
 }
-
 .fa-ul > li {
   position: relative;
 }
@@ -115,7 +114,6 @@
 .fab.fa-pull-left {
   margin-right: 0.3em;
 }
-
 .fa.fa-pull-right,
 .fas.fa-pull-right,
 .far.fa-pull-right,
@@ -140,7 +138,6 @@
     transform: rotate(360deg);
   }
 }
-
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   transform: rotate(90deg);
@@ -6075,7 +6072,6 @@ readers do not read off random characters that represent icons */
   src: url("../fonts/fa-solid-900.eot");
   src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg");
 }
-
 .fa,
 .fas {
   font-family: "Font Awesome 5 Free";
@@ -6094,7 +6090,6 @@ readers do not read off random characters that represent icons */
   src: url("../fonts/fa-brands-400.eot");
   src: url("../fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.woff") format("woff"), url("../fonts/fa-brands-400.ttf") format("truetype"), url("../fonts/fa-brands-400.svg#fontawesome") format("svg");
 }
-
 .fab {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
@@ -6112,7 +6107,6 @@ readers do not read off random characters that represent icons */
   src: url("../fonts/fa-regular-400.eot");
   src: url("../fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-regular-400.woff2") format("woff2"), url("../fonts/fa-regular-400.woff") format("woff"), url("../fonts/fa-regular-400.ttf") format("truetype"), url("../fonts/fa-regular-400.svg#fontawesome") format("svg");
 }
-
 .far {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
@@ -6125,7 +6119,6 @@ readers do not read off random characters that represent icons */
   font-weight: bold;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-Italic.eot");
@@ -6133,7 +6126,6 @@ readers do not read off random characters that represent icons */
   font-weight: normal;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-Medium.eot");
@@ -6141,7 +6133,6 @@ readers do not read off random characters that represent icons */
   font-weight: 500;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-SemiBoldItalic.eot");
@@ -6149,7 +6140,6 @@ readers do not read off random characters that represent icons */
   font-weight: 600;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-BoldItalic.eot");
@@ -6157,7 +6147,6 @@ readers do not read off random characters that represent icons */
   font-weight: bold;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-MediumItalic.eot");
@@ -6165,7 +6154,6 @@ readers do not read off random characters that represent icons */
   font-weight: 500;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-SemiBold.eot");
@@ -6173,7 +6161,6 @@ readers do not read off random characters that represent icons */
   font-weight: 600;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-Light.eot");
@@ -6181,7 +6168,6 @@ readers do not read off random characters that represent icons */
   font-weight: 300;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-Regular.eot");
@@ -6189,7 +6175,6 @@ readers do not read off random characters that represent icons */
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Euclid Circular B";
   src: url("../fonts/EuclidCircularB-LightItalic.eot");
@@ -6197,56 +6182,48 @@ readers do not read off random characters that represent icons */
   font-weight: 300;
   font-style: italic;
 }
-
 @font-face {
   font-family: "FuturaPT";
   src: url("../fonts/FuturaPTLight.ttf");
   font-style: normal;
   font-weight: 200;
 }
-
 @font-face {
   font-family: "FuturaPT";
   src: url("../fonts/FuturaPTBook.ttf");
   font-style: normal;
   font-weight: 300;
 }
-
 @font-face {
   font-family: "FuturaPT";
   src: url("../fonts/FuturaPTMedium.ttf");
   font-style: normal;
   font-weight: 400;
 }
-
 @font-face {
   font-family: "FuturaPT";
   src: url("../fonts/FuturaPTDemi.ttf");
   font-style: normal;
   font-weight: 500;
 }
-
 @font-face {
   font-family: "FuturaPT";
   src: url("../fonts/FuturaPTHeavy.ttf");
   font-style: normal;
   font-weight: 600;
 }
-
 @font-face {
   font-family: "FuturaPT";
   src: url("../fonts/FuturaPTBold.ttf");
   font-style: normal;
   font-weight: 700;
 }
-
 @font-face {
   font-family: "FuturaPT";
   src: url("../fonts/FuturaPTExtraBold.ttf");
   font-style: normal;
   font-weight: 900;
 }
-
 html body, html button, html input {
   font-family: "Euclid Circular B", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica, sans-serif;
   font-size: 18px;
@@ -6294,15 +6271,16 @@ h4, .h4 {
 }
 
 @media screen and (max-width: 425px) {
-  h1 {
+  html body {
+    font-size: 13px;
+  }
+  html h1 {
     font-size: 35px;
   }
-
-  h2, .h2 {
+  html h2, html .h2 {
     font-size: 22px;
   }
-
-  h4, .h4 {
+  html h4, html .h4 {
     font-size: 18px;
   }
 }

@@ -7,15 +7,26 @@
   .gallery-list {
     $maxSize: 160px;
     display: flex;
+    flex-wrap: wrap;
     gap: $mg2;
     align-items: center;
     justify-content: space-around;
     justify-items: center;
-    img {
+    img, a {
       flex: 1 1 20%;
       max-height: $maxSize;
       max-width: $maxSize;
       object-fit: contain;
+    }
+  }
+}
+
+@media screen and (max-width: $sm - 1px) {
+  .gallery-wrap {
+    .gallery-list {
+      img, a {
+        flex: 1 1 50%;
+      }
     }
   }
 }

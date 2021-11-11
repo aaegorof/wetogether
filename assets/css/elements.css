@@ -32,6 +32,14 @@
   padding: 1rem 6em;
   font-size: 14px;
 }
+@media screen and (max-width: 425px) {
+  .button, input[type=submit] {
+    font-size: 13px;
+    height: 40px;
+    min-width: 0;
+    padding: 1rem;
+  }
+}
 
 input[type=submit] {
   background: #EE9252;

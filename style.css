@@ -4191,17 +4191,6 @@ a.to-the-top > * {
 
 	/* Entry Content ------------------------- */
 
-	/* LISTS */
-
-	ul,
-	ol {
-		margin: 0 0 3rem 2rem;
-	}
-
-	li {
-		margin: 0.5rem 0 0 1rem;
-	}
-
 	/* Post Footer --------------------------- */
 
 	/* POST NAV LINKS */
