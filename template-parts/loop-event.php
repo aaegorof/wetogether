@@ -6,7 +6,15 @@ $location =get_field('location');
 $categories = get_the_category();
 ?>
 <div class="event-item">
-  <div class="event-title"><a href="<?php the_permalink() ;?>"><?php the_title(); ?></a></div>
+  <div class="event-title">
+    <?php if(!is_single()) :?>
+    <a href="<?php the_permalink() ;?>">
+      <?php endif; ;?>
+        <?php the_title(); ?>
+      <?php if(!is_single()) :?>
+    </a>
+    <?php endif ;?>
+  </div>
   <div class="excerpt"><?php the_excerpt(); ?></div>
 
   <ul class="post-categories">
@@ -30,7 +38,7 @@ $categories = get_the_category();
   <div class="meta"><i class="fa fa-map-marker-alt"></i> <?= $start_date ;?> – <?= $end_date; ?></div>
   <div class="buttons-row">
     <div class="ui dropdown add-event-<?= get_the_ID();?>">
-      <button class=" button primary calendar-button">Добавить в календарь</button>
+      <button class="button primary calendar-button">Добавить в календарь</button>
       <div class="menu"></div>
     </div>
     <div class="ui dropdown">
@@ -53,8 +61,16 @@ $categories = get_the_category();
   </div>
 
   <script>
+    addCalendar();
+    (function($) {
+      $('.ui.dropdown').dropdown('refresh');
+    })(jQuery);
+
     // http://carlsednaoui.github.io/add-to-calendar-buttons/
-    let calendar<?= get_the_ID();?> = createCalendar({
+    function addCalendar() {
+      let calendar<?= get_the_ID();?>;
+      if(!calendar<?= get_the_ID();?>) {
+        calendar<?= get_the_ID();?> = createCalendar({
           options: {
             class: 'add-to-calendar-dropdown',
             id: 'add-calendar-<?= get_the_ID();?>'       // You need to pass an ID. If you don't, one will be generated for you.
@@ -64,11 +80,13 @@ $categories = get_the_category();
             start: new Date("<?= $start_date;?>"),   // Event start date
             // duration: 120,                            // Event duration (IN MINUTES)
             end: new Date("<?= $end_date;?>"),     // You can also choose to set an end time.
-                                                      // If an end time is set, this will take precedence over duration
+            // If an end time is set, this will take precedence over duration
             address: "<?= $location;?>",
             description: 'Get on the front page of HN, then prepare for world domination.'
           }
         })
-    document.querySelector('.add-event-<?= get_the_ID();?> .menu').appendChild(calendar<?= get_the_ID();?>);
+        document.querySelector('.add-event-<?= get_the_ID();?> .menu').appendChild(calendar<?= get_the_ID();?>);
+      }
+    }
   </script>
 </div>

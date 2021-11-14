@@ -77,12 +77,7 @@ wp_body_open();
 
     </div><!-- .header-navigation-wrapper -->
 
-    <?php dynamic_sidebar('Шапка 0'); ?>
-
-    <select name="" id="">
-      <option value="ru"></option>
-      <option value="en"></option>
-    </select>
+    <?php wp_nav_menu(array('theme_location' => 'top-right')) ;?>
   </div>
 </header><!-- #site-header -->
 

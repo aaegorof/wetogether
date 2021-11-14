@@ -295,6 +295,7 @@ function twentytwenty_menus() {
 		'mobile'   => __( 'Mobile Menu', 'twentytwenty' ),
 		'footer'   => __( 'Footer Menu', 'twentytwenty' ),
 		'social'   => __( 'Social Menu', 'twentytwenty' ),
+		'top-right'   => __( 'Top-right', 'twentytwenty' ),
 	);
 
 	register_nav_menus( $locations );

@@ -20,6 +20,7 @@
 }
 .post-list .post-item .post-title {
   font-size: 16px;
+  color: #000;
 }
 .post-list .post-tail {
   display: flex;

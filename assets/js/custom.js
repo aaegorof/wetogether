@@ -1,47 +1,3 @@
-(function(){
-  init();
-  var g_containerInViewport;
-  function init(){
-    setStickyContainersSize();
-    bindEvents();
-  }
-
-  function bindEvents(){
-    window.addEventListener("wheel", wheelHandler);
-  }
-
-  function setStickyContainersSize(){
-    document.querySelectorAll('.sticky-container').forEach(function(container){
-      const stikyContainerHeight = (container.querySelector('main').offsetWidth + window.innerHeight);
-      container.setAttribute('style', 'height: ' + stikyContainerHeight + 'px');
-    });
-  }
-
-  function isElementInViewport (el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top <= 0 && rect.bottom > document.documentElement.clientHeight;
-  }
-
-  function wheelHandler(evt){
-
-    const containerInViewPort = Array.from(document.querySelectorAll('.sticky-container')).filter(function(container){
-      return isElementInViewport(container);
-    })[0];
-
-    if(!containerInViewPort){
-      return;
-    }
-
-    var isPlaceHolderBelowTop = containerInViewPort.offsetTop < document.documentElement.scrollTop;
-    var isPlaceHolderBelowBottom = containerInViewPort.offsetTop + containerInViewPort.offsetHeight > document.documentElement.scrollTop;
-    let g_canScrollHorizontally = isPlaceHolderBelowTop && isPlaceHolderBelowBottom;
-
-    if(g_canScrollHorizontally){
-      containerInViewPort.querySelector('main').scrollLeft += evt.deltaY;
-    }
-  }
-})();
-
 function intersect(target, callback){
   let observer = new IntersectionObserver(callback, {
     rootMargin: '-50% 0px -10% 0px',
@@ -139,9 +95,11 @@ setTimeout(animateThings, 500);
  * Follow me on Twitter: https://twitter.com/imac2
  */
 (function(){
+  let scontainer = '.sticky-container';
+  let slist = '.sticky-list';
   init();
-
   let g_containerInViewport;
+
   function init(){
     setStickyContainersSize();
     bindEvents();
@@ -152,8 +110,8 @@ setTimeout(animateThings, 500);
   }
 
   function setStickyContainersSize(){
-    document.querySelectorAll('.sticky-container').forEach(function(container){
-      const stikyContainerHeight = (container.querySelector('main').offsetWidth + window.innerHeight);
+    document.querySelectorAll(scontainer).forEach(function(container){
+      const stikyContainerHeight = (container.querySelector(slist).offsetWidth + window.innerHeight);
       container.setAttribute('style', 'height: ' + stikyContainerHeight + 'px');
     });
   }
@@ -165,7 +123,7 @@ setTimeout(animateThings, 500);
 
   function wheelHandler(evt){
 
-    const containerInViewPort = Array.from(document.querySelectorAll('.sticky-container')).filter(function(container){
+    const containerInViewPort = Array.from(document.querySelectorAll(scontainer)).filter(function(container){
       return isElementInViewport(container);
     })[0];
 
@@ -178,15 +136,23 @@ setTimeout(animateThings, 500);
     let g_canScrollHorizontally = isPlaceHolderBelowTop && isPlaceHolderBelowBottom;
 
     if(g_canScrollHorizontally){
-      containerInViewPort.querySelector('main').scrollLeft += evt.deltaY;
+      containerInViewPort.querySelector(slist).scrollLeft += evt.deltaY;
     }
   }
 })();
 
 
-var shareItems = document.querySelectorAll('.social_share');
-for (var i = 0; i < shareItems.length; i += 1) {
-  shareItems[i].addEventListener('click', function share(e) {
-    return JSShare.go(this);
-  });
-}
+document.addEventListener('click', function(e){
+  const target = e.target,
+      classes = [...target.classList],
+      uiDropdownCl = ['calendar-button'];
+
+  // if(classes.some(className => uiDropdownCl.indexOf(className) !== -1)) {
+  //   console.log('hittes', jQuery.dropdown);
+  //   const dropdown = jQuery.fn.dropdown;
+  //   dropdown(target.parentNode);
+  // }
+  if(classes.includes('social_share')){
+    return JSShare.go(e.target);
+  }
+})
