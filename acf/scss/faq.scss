@@ -7,6 +7,9 @@
   .faq-item {
     border-bottom: 1px solid $light-grey;
     overflow: hidden;
+    .faq-answer {
+      padding: $mg1 0;
+    }
     &.opened {
       .faq-answer {
         height: initial;

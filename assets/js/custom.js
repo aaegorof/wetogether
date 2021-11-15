@@ -144,14 +144,8 @@ setTimeout(animateThings, 500);
 
 document.addEventListener('click', function(e){
   const target = e.target,
-      classes = [...target.classList],
-      uiDropdownCl = ['calendar-button'];
+      classes = [...target.classList];
 
-  // if(classes.some(className => uiDropdownCl.indexOf(className) !== -1)) {
-  //   console.log('hittes', jQuery.dropdown);
-  //   const dropdown = jQuery.fn.dropdown;
-  //   dropdown(target.parentNode);
-  // }
   if(classes.includes('social_share')){
     return JSShare.go(e.target);
   }

@@ -196,12 +196,6 @@ function twentytwenty_register_styles() {
 	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
 //	wp_enqueue_style( 'jssocials-minima', get_stylesheet_uri() . '/assets/css/jssocials.css', array(), $theme_version );
 //	wp_enqueue_style( 'jssocials', get_stylesheet_uri() . '/assets/css/jssocials-theme-minima.css', array(), $theme_version );
-	wp_enqueue_style( 'semantic-dropdown', get_template_directory_uri(). '/assets/vendor/dropdown.css', null, $theme_version );
-	wp_enqueue_style( 'semantic-tab', get_template_directory_uri(). '/assets/vendor/tab.css', null, $theme_version );
-	wp_enqueue_style( 'semantic-menu', get_template_directory_uri(). '/assets/vendor/menu.css', null, $theme_version );
-	wp_enqueue_style( 'semantic-transition', get_template_directory_uri(). '/assets/vendor/transition.css', null, $theme_version );
-	wp_enqueue_style( 'semantic-dimmer', get_template_directory_uri(). '/assets/vendor/dimmer.css', null, $theme_version );
-	wp_enqueue_style( 'semantic-modal', get_template_directory_uri(). '/assets/vendor/modal.css', null, $theme_version );
 	wp_enqueue_style( 'main', get_template_directory_uri(). '/assets/css/main.css', null, $theme_version );
 	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
 
@@ -235,6 +229,7 @@ function twentytwenty_register_scripts() {
 	wp_enqueue_script( 'semantic-dropdown', get_template_directory_uri() . '/assets/vendor/dropdown.js', array('jquery'));
 	wp_enqueue_script( 'semantic-dimmer', get_template_directory_uri() . '/assets/vendor/dimmer.js', array('jquery'));
 	wp_enqueue_script( 'semantic-modal', get_template_directory_uri() . '/assets/vendor/modal.js', array('jquery'));
+	wp_enqueue_script( 'semantic-visibility', get_template_directory_uri() . '/assets/vendor/visibility.js', array('jquery'));
 
 //	wp_enqueue_script( 'jssocials', get_template_directory_uri() . '/assets/js/jssocials.min.js', array('jquery'), $theme_version, true);
 	wp_enqueue_script( 'jsshare', get_template_directory_uri() . '/assets/js/jsshare.js', array('jquery'), $theme_version, true);
@@ -965,3 +960,29 @@ add_post_type_support( 'page', 'excerpt' );
 add_filter( 'get_the_archive_title', function( $title ){
     return preg_replace('~^[^:]+:~', '', $title );
 });
+
+
+the_excerpt_max_charlength(80);
+
+function the_excerpt_max_charlength( $charlength ){
+    $excerpt = get_the_excerpt();
+    $charlength++;
+
+    if ( mb_strlen( $excerpt ) > $charlength ) {
+        $subex = mb_substr( $excerpt, 0, $charlength - 5 );
+        $exwords = explode( ' ', $subex );
+        $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+        if ( $excut < 0 ) {
+            echo mb_substr( $subex, 0, $excut );
+        } else {
+            echo $subex;
+        }
+        echo '[...]';
+    } else {
+        echo $excerpt;
+    }
+}
+
+add_filter( 'excerpt_length', function(){
+    return 20;
+} );

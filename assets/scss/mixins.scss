@@ -144,13 +144,17 @@
 }
 
 @mixin gap($columns, $gap, $class) {
+  $maxWidth: calc((100% - #{$gap}* (#{$columns} - 1))/ #{$columns});
   display: flex;
   flex-wrap: wrap;
   gap: $gap;
   > #{$class}{
-    $maxWidth: calc((100% - #{$gap}* (#{$columns} - 1))/ #{$columns});
     flex: 1 1 $maxWidth;
     max-width: $maxWidth;
+    &.double-size {
+      max-width: calc((100% - #{$gap} * (#{$columns} - 2)) * 2/ #{$columns});
+      min-width: calc((100% - #{$gap} * (#{$columns} - 2)) * 2/ #{$columns});
+    }
   }
 }
 

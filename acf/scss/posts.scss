@@ -49,10 +49,10 @@
     &>.post-item {
       &:first-of-type {
         $maxWidth: calc((100% - #{$mg2} * 2)/ 2);
-        text-align: center;
-        color: white;
         flex: 1 1 $maxWidth;
         max-width: $maxWidth;
+        text-align: center;
+        color: white;
         display: flex;
         align-items: center;
         justify-content: center;

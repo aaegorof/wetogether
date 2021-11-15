@@ -1,7 +1,7 @@
 <?php
-$withDate = $args['withDate'];
+['withDate' => $withDate, 'class' =>$class, 'withExcerpt' => $withExcerpt] = $args;
 ?>
-<a href="<?= get_permalink() ;?>" class="card-item">
+<a href="<?= get_permalink() ;?>" class="card-item <?= $class;?>">
     <img src="<?= get_the_post_thumbnail_url();?>" alt="<?php the_title();?>">
     <div class="pd-1 metas">
         <?php if($withDate):?>
@@ -9,8 +9,8 @@ $withDate = $args['withDate'];
         <?php endif;?>
         <div class="name"><?php the_title() ;?></div>
         <div class="description">
-            <?php if($withDate){
-              the_excerpt();
+            <?php if($withExcerpt){
+              echo get_the_excerpt();
             } else {
                 the_field('position');
             }?>
