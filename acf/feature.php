@@ -14,7 +14,7 @@ $view = $args['view'] ? $args['view'] : get_sub_field('view');
 $isAlone = !!empty($args);
 ?>
 <?php if ($isAlone) : ?>
-<section class="feature-wrap">
+<section class="feature-wrap <?= $view ;?>-wrap">
     <?php if ($view === 'flysvg') : ?>
       <svg width="162" height="283" viewBox="0 0 162 283" fill="none" xmlns="http://www.w3.org/2000/svg"
            class="right-svg">

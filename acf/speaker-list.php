@@ -4,7 +4,7 @@ $section = get_sub_field('for_section');
 $notes = $section['notes'];
 ?>
 
-<section class="speakers-wrap container sticky-container" id="speakers">
+<section class="speakers-wrap container" id="speakers">
   <h2><?php echo $section['title']; ?></h2>
   <div class="speakers-list">
     <?php foreach ($speakers as $speaker) : ?>

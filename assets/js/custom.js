@@ -81,6 +81,80 @@ setTimeout(animateThings, 500);
     const targetId = $(this).attr('href').split('-').slice(1).join('-');
     $('#' +targetId).modal('show');
   });
+
+
+  function animateElement(animateContainerSelector, fric = 30, maxRadius = 30) {
+    let lFollowX = 0,
+        lFollowY = 0,
+        x = 0,
+        y = 0,
+        friction = 1 / fric;
+
+    function moveBackground(animateContainerSelector) {
+      x += (lFollowX - x) * friction;
+      y += (lFollowY - y) * friction;
+
+      const translate = 'translateX(' + x + 'px) translateY(' + y +'px)';
+
+      $(animateContainerSelector).css({
+        '-webit-transform': translate,
+        '-moz-transform': translate,
+        'transform': translate
+      });
+
+      window.requestAnimationFrame(() => moveBackground(animateContainerSelector));
+    }
+    moveBackground(animateContainerSelector);
+
+    $(window).on('mousemove', function(e) {
+
+      var isHovered = $(animateContainerSelector + ':hover').length > 0;
+      const position = document.querySelector(animateContainerSelector).getBoundingClientRect();
+      const {top, width, left, height} = position
+      const xCenter = left + width/2
+      const yCenter = top + height/2
+      //if(!$(e.target).hasClass('animate-this')) {
+      if(!isHovered) {
+        var lMouseX = Math.max(-100, Math.min(100, xCenter - e.clientX)),
+            lMouseY = Math.max(-100, Math.min(100, yCenter - e.clientY));
+
+        lFollowX = (maxRadius * lMouseX) / 100;
+        lFollowY = (maxRadius * lMouseY) / 100;
+      }
+    });
+  }
+
+
+  animateElement('.flysvg-wrap .left-svg');
+
+
+  const animateTarget = (animateContainer) => {
+    const target = animateContainer.find('.left-svg');
+    const trans = num => (x, y) => {
+      const xx = num < 30 ? num : -num;
+      const yy = num < 30 ? num : -num;
+      console.log(num, x, y, xx, yy);
+      return `translate3d(${x / xx}px, ${y / yy}px, 0)`;
+    };
+
+    animateContainer.visibility({
+      once       : false,
+      continuous : true,
+      offset: 50,
+      onUpdate: function(calculations) {
+        // do something whenever calculations adjust
+        // updateTable(calculations);
+      },
+      onPassing  : function(calculations) {
+        // target.prepend(calculations.percentagePassed);
+        const trnsf = trans(Math.random() * 20 + 22)(calculations.percentagePassed * 10, calculations.percentagePassed * 10);
+        target.css('transform', trnsf);
+      }
+    });
+  };
+
+  // animateTarget($('.flysvg-wrap'));
+
   // $("#shareIcons").jsSocials({
   //   // showLabel: false,
   //   // showCount: false,
