@@ -75,10 +75,18 @@ wp_body_open();
         }
         ?>
 
+        <?php wp_nav_menu(array('theme_location' => 'top-right')) ;?>
+
     </div><!-- .header-navigation-wrapper -->
 
-    <?php wp_nav_menu(array('theme_location' => 'top-right')) ;?>
+
+
+    <button class="menu-toggle hide-sm humburger">
+      <i class="fa fa-times"></i>
+    </button>
+
   </div>
+
 </header><!-- #site-header -->
 
 <?php

@@ -82,6 +82,14 @@ setTimeout(animateThings, 500);
     $('#' +targetId).modal('show');
   });
 
+  $('.humburger').click(function () {
+    $(this).toggleClass('active');
+    $('.header-navigation-wrapper').toggleClass('opened');
+  });
+  $('.header-navigation-wrapper a:not([href*="pll_switcher"])').click(function () {
+    $('.header-navigation-wrapper').removeClass('opened');
+    $('.humburger').removeClass('active');
+  });
 
   function animateElement(animateContainerSelector, fric = 30, maxRadius = 30) {
     if(!document.querySelector(animateContainerSelector)) {

@@ -197,3 +197,67 @@ section {
     @include card($mg2);
   }
 }
+
+.menu-knopka-registraczii-container {
+  margin-left: 100px;
+}
+
+
+
+
+@media screen and (max-width: $sm - 1px){
+  body {
+    padding-top: $menu-height;
+  }
+  #site-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+
+  .header-navigation-wrapper {
+    position: fixed;
+    display: block;
+    top: $menu-height;
+    height: calc(100vh - #{$menu-height});
+    width: 100%;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    z-index: 40;
+    padding: $mg3;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+    .primary-menu {
+      display: block;
+      li {
+        + & {
+          margin-top: 10px;
+        }
+      }
+      a {
+        padding: 0.5rem 0;
+        width: 100%;
+        display: block;
+      }
+    }
+    &.opened {
+      transform: translateX(0%);
+    }
+  }
+  .menu-knopka-registraczii-container {
+    position: absolute;
+    bottom: $mg3;
+    left: $mg3;
+    right: $mg3;
+    margin-left: 0;
+    li {
+      width: 100%;
+      margin-left: 0;
+      a {
+        width: 100%;
+        position: relative;
+      }
+    }
+  }
+}
