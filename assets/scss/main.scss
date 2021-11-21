@@ -29,8 +29,8 @@
 
 
 body {
-  @media screen and (max-width: $md) {
-
+  @media screen and (max-width: $md - 1px) {
+    @import "tablet";
   }
   @media screen and (max-width: $sm - 1px) {
     overflow-x: hidden;

@@ -121,4 +121,7 @@ input[type=submit]{
       font-size: 16px;
     }
   }
+  @media screen and (max-width: $md - 1px){
+    @include gap(2, $mg2, '.card-item');
+  }
 }
