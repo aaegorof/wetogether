@@ -23,12 +23,15 @@ get_header();
             <div class="col-md-9 pd-md-2-r">
               <h1><?php the_title(); ?></h1>
                 <?php get_template_part('template-parts/loop-event') ;?>
-
+              <?php if(get_the_content()) :?>
               <div class="card mg-2-t"><?php the_content();?></div>
+              <?php endif ;?>
             </div>
 
             <aside class="col-md-3 pd-1">
+              <?php if(get_post_thumbnail_id()) :?>
               <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+            <?php endif ;?>
             </aside>
 
           </div>

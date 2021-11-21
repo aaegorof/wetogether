@@ -8,7 +8,7 @@
 .buttons-row {
   display: flex;
   gap: $mg2;
-  margin-top: 26px;
+  padding-top: 26px;
 
   & > * {
     flex: 1 1 150px;
@@ -22,6 +22,11 @@
   box-shadow: $shadow;
   padding: $mg2;
   font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  .buttons-row {
+    margin-top: auto;
+  }
 
   .event-title {
     font-size: 20px;

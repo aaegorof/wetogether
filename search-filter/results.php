@@ -30,9 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( $query->have_posts() )
 {
     ?>
-<section class="container programm-results">
-<!--    Found --><?php //echo $query->found_posts; ?><!-- Results<br />-->
-<!--    Page --><?php //echo $query->query['paged']; ?><!-- of --><?php //echo $query->max_num_pages; ?><!--<br />-->
+<section class="container programm-results search-filter-results-list">
 
     <?php
     while ($query->have_posts())
@@ -43,25 +41,26 @@ if ( $query->have_posts() )
     }
     ?>
 </section>
-<!--  Page --><?php //echo $query->query['paged']; ?><!-- of --><?php //echo $query->max_num_pages; ?><!--<br />-->
+  Стр <?php echo $query->query['paged']; ?> of <?php echo $query->max_num_pages; ?><br />
 
-<!--  <div class="pagination">-->
-<!---->
-<!--    <div class="nav-previous">--><?php //next_posts_link( 'Older posts', $query->max_num_pages ); ?><!--</div>-->
-<!--    <div class="nav-next">--><?php //previous_posts_link( 'Newer posts' ); ?><!--</div>-->
-<!--      --><?php
-//      /* example code for using the wp_pagenavi plugin */
-//      if (function_exists('wp_pagenavi'))
-//      {
-//          echo "<br />";
-//          wp_pagenavi( array( 'query' => $query ) );
-//      }
-//      ?>
-<!--  </div>-->
+  <div class="pagination">
+
+    <div class="nav-previous"><?php next_posts_link( 'След', $query->max_num_pages ); ?></div>
+    <div class="nav-next"><?php previous_posts_link( 'Пред' ); ?></div>
+      <?php
+      /* example code for using the wp_pagenavi plugin */
+      if (function_exists('wp_pagenavi'))
+      {
+          echo "<br />";
+          wp_pagenavi( array( 'query' => $query ) );
+      }
+      ?>
+  </div>
     <?php
 }
 else
-{
-    echo "No Results Found";
-}
-?>
+{?>
+  <div class='search-filter-results-list' data-search-filter-action='infinite-scroll-end'>
+    <span>End of Results</span>
+  </div>
+<?php } ?>

@@ -42,7 +42,9 @@ $samePosts = get_posts(array(
       </div>
     </div>
     <aside class="col-md-3 pd-1">
-
+        <?php if(get_post_thumbnail_id()) :?>
+          <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+        <?php endif ;?>
     </aside>
   </div>
 

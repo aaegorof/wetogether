@@ -84,6 +84,9 @@ setTimeout(animateThings, 500);
 
 
   function animateElement(animateContainerSelector, fric = 30, maxRadius = 30) {
+    if(!document.querySelector(animateContainerSelector)) {
+      return
+    }
     let lFollowX = 0,
         lFollowY = 0,
         x = 0,
@@ -107,7 +110,6 @@ setTimeout(animateThings, 500);
     moveBackground(animateContainerSelector);
 
     $(window).on('mousemove', function(e) {
-
       var isHovered = $(animateContainerSelector + ':hover').length > 0;
       const position = document.querySelector(animateContainerSelector).getBoundingClientRect();
       const {top, width, left, height} = position
@@ -124,8 +126,8 @@ setTimeout(animateThings, 500);
     });
   }
 
+    animateElement('.fly-svg');
 
-  animateElement('.flysvg-wrap .left-svg');
 
 
   const animateTarget = (animateContainer) => {
@@ -153,13 +155,7 @@ setTimeout(animateThings, 500);
     });
   };
 
-  // animateTarget($('.flysvg-wrap'));
 
-  // $("#shareIcons").jsSocials({
-  //   // showLabel: false,
-  //   // showCount: false,
-  //   shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
-  // });
 
 })(jQuery);
 

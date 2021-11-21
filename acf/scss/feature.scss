@@ -11,6 +11,7 @@
     right: 0;
   }
 }
+
 .feature-item {
   justify-content: center;
   border-radius: $radius-card;
@@ -34,10 +35,21 @@
     margin-top: 90px;
   }
   &.withbg {
+    $offset: 4rem;
     background: #fff;
     box-shadow: $shadow;
     position: relative;
     z-index: 20;
+    margin-left: -$offset;
+    margin-right: -$offset;
+    padding-left: $offset;
+    padding-right: $offset;
+    .feature-img-wrap {
+      text-align: center;
+    }
+    .feature-img {
+      display: inline-block;
+    }
     h3 {
       font-size: 36px;
     }
