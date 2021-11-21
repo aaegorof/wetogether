@@ -13,6 +13,10 @@ get_header();
 ?>
 <?php get_template_part('template-parts/content-nav') ;?>
 
+<?php
+$gallery = get_field('galaereya');
+;?>
+
 <main id="site-content" class="container type-<?= get_post_type() ;?> mg-4-b" role="main">
     <?php
     if (have_posts()) {
@@ -24,8 +28,10 @@ get_header();
               <h1><?php the_title(); ?></h1>
                 <?php get_template_part('template-parts/loop-event') ;?>
               <?php if(get_the_content()) :?>
-              <div class="card mg-2-t"><?php the_content();?></div>
+                <div class="card mg-2-t"><?php the_content();?></div>
               <?php endif ;?>
+
+              <?php get_template_part('acf/gallery', '', array('gallery' => $gallery, 'title' => 'При поддержке')) ;?>
             </div>
 
             <aside class="col-md-3 pd-1">

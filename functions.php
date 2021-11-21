@@ -984,5 +984,16 @@ function the_excerpt_max_charlength( $charlength ){
 }
 
 add_filter( 'excerpt_length', function(){
-    return 20;
+    return 30;
 } );
+
+
+function filter_function_name($input_object, $sfid){
+    if($input_object['name']=='_my_field_name')
+    {
+        //udpate this field before rendering
+    }
+
+    return $input_object;
+}
+add_filter('sf_input_object_pre', 'filter_function_name', 10, 2);

@@ -6,11 +6,19 @@
  */
 ?>
 
-<?php $gallery = get_sub_field('galaereya'); ?>
+<?php $gallery = $args['gallery'] ? $args['gallery'] : get_sub_field('galaereya'); ?>
 <?php $section = get_sub_field('for_section'); ?>
+<?php $title = $args['title'] ? $args['title'] : $section['title'];?>
 <?php $notes = $section['notes']; ?>
+
+<?php if(empty($gallery)){
+  return ;
+};?>
+
 <section class="gallery-wrap container">
-  <h2><?php echo $section['title']; ?></h2>
+  <?php if($title) :?>
+  <h2><?php echo $title;?></h2>
+  <?php endif ;?>
   <div class="gallery-list">
       <?php foreach ($gallery as $img) : ?>
           <?php
