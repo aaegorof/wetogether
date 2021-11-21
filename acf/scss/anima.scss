@@ -54,4 +54,31 @@ section.anima {
     clear: both;
     display: block;
   }
+
+
+  @media screen and (max-width: $sm - 1px) {
+    min-height: 80vh;
+    position: relative;
+    .hero-about{
+      position: relative;
+      padding-left: 10%;
+      max-width: 90%;
+      width: 90%;
+      left: 0;
+      transform: none;
+      z-index: 5;
+    }
+    .img-left {
+      position: absolute;
+      width: 50vw;
+      bottom: -7px;
+      z-index: 0;
+    }
+    .img-right {
+      position: absolute;
+      width: 50vw;
+      bottom: 0;
+      right: 0;
+    }
+ }
 }

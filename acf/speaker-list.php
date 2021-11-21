@@ -19,12 +19,6 @@ $notes = $section['notes'];
       <img src="<?= $image;?>" alt="<?= $name;?>">
       <div class="pd-1-h">
         <div class="speaker-name"><?= $name ;?></div>
-        <?php if($position): ?>
-        <div class="meta speaker-description">
-          <i class="fa fa-briefcase" style="color: #000;"></i>
-          <?= $position; ?>
-        </div>
-        <?php endif;?>
       </div>
     </a>
 

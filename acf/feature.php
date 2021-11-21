@@ -118,7 +118,7 @@ $isAlone = !!empty($args);
               <?php endif; ?>
           </div>
         </div>
-        <div class="col-md-5 pd-md-2-l hide-sm-max text-center">
+        <div class="col-md-5 pd-md-2-l hide-sm-max">
           <img src="<?= $image; ?>" class="feature-img opacityanimated" alt=""/>
         </div>
       </div>

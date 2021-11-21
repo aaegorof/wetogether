@@ -24,4 +24,12 @@
     font-weight: 600;
     margin: 1rem 0 0.5rem;
   }
+
+  @media screen and (max-width: $sm - 1px){
+    .speaker-card {
+      width: 100%;
+      max-width: 100%;
+      flex-basis: auto;
+    }
+  }
 }

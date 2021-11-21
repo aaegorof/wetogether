@@ -12,11 +12,17 @@
     align-items: center;
     justify-content: space-around;
     justify-items: center;
-    img, a {
+     & > img, a {
       flex: 1 1 20%;
       max-height: $maxSize;
       max-width: $maxSize;
+       text-align: center;
+    }
+    img {
+      aspect-ratio: 4/3;
       object-fit: contain;
+      object-position: center;
+      display: inline;
     }
   }
 }
@@ -24,8 +30,12 @@
 @media screen and (max-width: $sm - 1px) {
   .gallery-wrap {
     .gallery-list {
-      img, a {
-        flex: 1 1 50%;
+      & > img, a {
+        max-width: calc(50% - #{$mg2} / 2 );
+        flex-basis: auto;
+      }
+      img {
+        max-width: 100%;
       }
     }
   }

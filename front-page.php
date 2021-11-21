@@ -17,11 +17,11 @@
 
 get_header();
 ?>
-<section class="main">
+<main class="main">
   <?php if(has_flexible('content-row')):
       the_flexible('content-row');
   endif; ?>
     <?php the_content(); ?>
-</section>
+</main>
 
 <?php get_footer(); ?>

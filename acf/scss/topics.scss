@@ -16,10 +16,21 @@ section.topics-wrap {
   .topic-icon {
     margin-bottom: 1rem;
   }
+
+
   @media screen and (max-width: $sm - 1px){
     column-gap: 0;
+    .topic-title{
+      font-size: 16px;
+    }
     .topic-item {
       width: 100%;
+      .topic-icon {
+        margin-bottom: 10px;
+      }
+      ul, ol {
+        margin-left: 1rem;
+      }
     }
   }
 }

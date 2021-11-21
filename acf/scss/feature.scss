@@ -89,7 +89,8 @@
       padding-top: 20px;
     }
     &.withbg {
-      padding: $mg2;
+      padding-top: $mg2;
+      padding-bottom: $mg2;
       h3 {
         font-size: 24px;
       }
@@ -100,10 +101,13 @@
         margin-top: 10px;
       }
     }
-    .text-center {
-      .feature-img {
-        display: inline-block;
-      }
+    .feature-img-wrap {
+      text-align: center;
+    }
+    .feature-img {
+      max-width: 80vw;
+      max-height: 40vh;
+      display: inline-block;
     }
     .button {
       width: 100%;
