@@ -29,6 +29,10 @@
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+    .container {
+      padding-left: initial;
+      padding-right: initial;
+    }
   }
 }
 

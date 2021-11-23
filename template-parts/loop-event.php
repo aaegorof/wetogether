@@ -31,7 +31,7 @@ $types = get_the_terms($post->ID, 'event_type');
             <?= $category->name; ?>
         </li>
       <?php endforeach; ?>
-      <?php foreach ($types as $type): ?>
+      <?php foreach ((array)$types as $type): ?>
         <li class="term-name">
             <?= $type->name; ?>
         </li>

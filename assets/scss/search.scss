@@ -5,9 +5,9 @@
   & > ul{
     margin: 0;
     display: flex;
-    @include gap(6, $mg2, 'li');
+    @include gap(5, $mg2, 'li');
     .sf-field-post-meta-start_date {
-      max-width: 30%;
+     display: none;
     }
     .sf-field-reset {
       flex-basis: 100px;

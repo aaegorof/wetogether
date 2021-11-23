@@ -15,7 +15,6 @@
   }
 }
 
-
 .event-item {
   background: white;
   border-radius: $radius-card;
@@ -57,8 +56,9 @@
 .speaker-list {
   display: flex;
   column-count: 2;
-  column-gap: 10px;
+  gap: 10px;
   margin-top: 10px;
+  flex-wrap: wrap;
 
   .speaker {
     display: inline-flex;
@@ -96,6 +96,7 @@
     width: 100%;
   }
 }
+
 .social-dropdown {
   @include mini-dropdown;
   display: flex;
@@ -114,6 +115,8 @@
    & > .event-item {
      width: 100%;
      max-width: 100%;
+     padding: $mg1;
+     border-radius: $radius;
    }
   }
   .speaker-list {

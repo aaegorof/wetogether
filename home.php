@@ -47,6 +47,7 @@ $otherposts = get_posts($args);
               <?php wp_reset_postdata() ;?>
             <?php endforeach;?>
           </div>
+          <?php the_posts_pagination() ;?>
       <?php }; ?>
   </section>
 </main>

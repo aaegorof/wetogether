@@ -996,4 +996,41 @@ function filter_function_name($input_object, $sfid){
 
     return $input_object;
 }
+
 add_filter('sf_input_object_pre', 'filter_function_name', 10, 2);
+
+add_action('acf/save_post', 'my_acf_save_post', 5);
+
+function my_acf_save_post( $post_id ) {
+    // Get previous values.
+    $prev_values = get_fields( $post_id );
+    $start_date = $prev_values['start_date'];
+    $start_date_only = explode(' ', $start_date)[0];
+    //update_field('start_date', $start_date_only);
+
+    // Get submitted values.
+    $values = $_POST['acf'];
+
+   //print_r($values);
+    // Check if a specific value was updated.
+    if( isset($_POST['acf']['field_abc123']) ) {
+        // Do something.
+    }
+}
+
+add_filter('acf/update_value/type=date_time_picker', 'my_update_value_date_time_picker', 10, 3);
+function my_update_value_date_time_picker( $value, $post_id, $field ) {
+    return date('Ymd H:i', strtotime( $value ));
+}
+
+function updateAllEvents($type){
+  //Be carefull - this will update all start dates...or end dates
+    $posts = get_posts(['post_type' => 'event', 'numberposts' => -1, 'post_status' => 'publish']);
+    foreach($posts as $post){
+      $start = get_field('start_date', $post);
+      $end = get_field('end_date', $post);
+        update_field('end_date', date('Ymd H:i', strtotime( $end )), $post->ID);
+}
+}
+//Be carefull - this will update all start dates...or end dates
+//add_action( 'wp_loaded', 'updateAllEvents' );

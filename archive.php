@@ -4,6 +4,7 @@ $props = array("withDate"=> $q->name !== 'speaker');
 ?>
 
 <?php get_header() ;?>
+
 <main>
   <header class="page-header">
       <?php the_archive_title('<h1 class="entry-title">', '</h1>'); ?>
@@ -21,6 +22,7 @@ $props = array("withDate"=> $q->name !== 'speaker');
               <?php wp_reset_postdata() ;?>
           <?php } ?>
           </div>
+          <?php the_posts_pagination() ;?>
       <?php }; ?>
   </section>
 </main>

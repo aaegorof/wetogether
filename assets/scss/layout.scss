@@ -4,7 +4,10 @@
 html {
   overflow-x: hidden;
 }
-
+pre {
+  font-size: 12px;
+  line-height: 1.2;
+}
 body {
   background: $bg-color;
   min-height: 100vh;
@@ -202,6 +205,12 @@ section {
   margin-left: 100px;
 }
 
+.pagination {
+  margin-top: 40px;
+  .nav-links {
+    font-size: 1.2rem;
+  }
+}
 
 
 

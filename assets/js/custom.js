@@ -163,7 +163,14 @@ setTimeout(animateThings, 500);
     });
   };
 
+$(document).on('click', '.set-start-date', function(){
+  const urlParams = new URLSearchParams(window.location.search);
+  console.log($(this), $(this).data(), $(this).data('startdate'));
+  const startDate = $(this).data('startdate');
+  urlParams.set('_sfm_start_date', startDate+'+'+startDate);
 
+  window.location.search = urlParams
+});
 
 })(jQuery);
 

@@ -1,8 +1,12 @@
 <?php
 ['withDate' => $withDate, 'class' =>$class, 'withExcerpt' => $withExcerpt] = $args;
+
+$imgUrl = get_the_post_thumbnail_url();
 ?>
 <a href="<?= get_permalink() ;?>" class="card-item <?= $class;?>">
-    <img src="<?= get_the_post_thumbnail_url();?>" alt="<?php the_title();?>">
+  <?php if($imgUrl):?>
+    <img src="<?= $imgUrl;?>" alt="<?php the_title();?>">
+  <?php endif ;?>
     <div class="pd-1 metas">
         <?php if($withDate):?>
             <div class="date text-note"><?= twentytwenty_get_theme_svg('calendar', 'ui'); ?><?=  get_the_date();?></div>
