@@ -36,16 +36,19 @@ $values = array_filter(array_unique(get_meta_values('start_date', 'event')), fun
 ?>
 
 <?php $uniqDates = []; ?>
-<div class="programm-dates row">
+<div class="programm-dates ui top secondary menu">
+    <a class="item set-start-date"
+       data-startDate="all">Все</a>
     <?php foreach ($values as $k => $val): ?>
         <?php if (strtotime($val) >= strtotime(date('Ymd H:i'))) : ?>
             <?php
             $onlyDate = explode(' ', $val)[0];
             if (!in_array($onlyDate, $uniqDates)):?>
                 <?php array_push($uniqDates, $onlyDate);; ?>
-              <button class="button set-start-date"
-                      data-startDate="<?= $onlyDate; ?>"> <?= date_i18n('j F', strtotime($onlyDate)); ?> </button>
+              <a class="item set-start-date"
+                      data-startDate="<?= $onlyDate; ?>"> <?= date_i18n('j F', strtotime($onlyDate)); ?> </a>
             <?php endif; ?>
         <?php endif; ?>
     <?php endforeach; ?>
 </div>
+
