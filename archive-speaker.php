@@ -1,7 +1,6 @@
 <?php
-//$q = get_queried_object();
-//$props = array("withDate"=> $q->name !== 'speaker');
-$props = array("withDate"=> true);
+$props = array("withDate"=> false);
+
 ?>
 
 <?php get_header() ;?>
@@ -14,16 +13,16 @@ $props = array("withDate"=> true);
     </div>
   </header>
 
-  <section class="container taxonomy-<?php $q->name ;?>">
+  <section class="container taxonomy-speaker">
       <?php if (have_posts()) { ?>
           <div class="grid-4">
           <?php while (have_posts()) {
               the_post(); ?>
               <?php get_template_part('template-parts/card', '', $props) ;?>
+              <?php wp_reset_postdata() ;?>
           <?php } ?>
           </div>
           <?php the_posts_pagination() ;?>
-          <?php wp_reset_postdata() ;?>
       <?php }; ?>
   </section>
 </main>

@@ -909,8 +909,8 @@ add_action( 'widgets_init', 'register_my_widgets' );
 function register_my_widgets(){
 
     register_sidebar( array(
-        'name'          => sprintf(__('Шапка %d'), $i ),
-        'id'            => "sidebar-$i",
+        'name'          => 'Шапка',
+        'id'            => "sidebar",
         'description'   => 'Обалсть в шапке сайта',
         'class'         => '',
         'before_widget' => '<div class="header-sidebar">',

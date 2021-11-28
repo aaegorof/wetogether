@@ -1,4 +1,6 @@
 <?php
+global $searchandfilter;
+$sf_current_query = $searchandfilter->get(136)->current_query();
 
 function get_meta_values($key = 'start_date', $type = 'event', $prepare_field = null)
 {
@@ -23,15 +25,13 @@ ORDER BY pm.meta_value ASC
     return $metas;
 }
 
-//$formatted_date = date_i18n('j F Y с H:i', strtotime($start_date));
-$explodeDate = function ($val) {
-    $onlyDate = explode(' ', $val)[0];
-};
 $values = array_filter(array_unique(get_meta_values('start_date', 'event')), function ($value) {
     return !is_null($value) && $value !== '';
 });
 ?>
-
+<pre class="hide-lg">
+<?php print_r($sf_current_query) ;?>
+</pre>
 <?php $uniqDates = []; ?>
 <div class="programm-dates ui top secondary menu">
     <a class="item set-start-date"
@@ -51,16 +51,38 @@ $values = array_filter(array_unique(get_meta_values('start_date', 'event')), fun
 
 <script>
   (function ($) {
+    const updateActiveTabs = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const dateFromUrl = urlParams.get('_sfm_start_date')?.split(' ')[0];
+      if(dateFromUrl){
+        const year = dateFromUrl.slice(0,4);
+        const month = dateFromUrl.slice(4,6);
+        const date = dateFromUrl.slice(-2);
+        const tabLink = $(`[data-startdate="${year}/${month}/${date}"]`);
+        tabLink.addClass('active');
+      } else {
+        $('[data-startdate="all"]').addClass('active');
+      }
+    }
+
+    $(document).ready(updateActiveTabs);
+
     $(document).on('click', '.set-start-date', function(){
-      // const urlParams = new URLSearchParams(window.location.search);
       // urlParams.set('_sfm_start_date', startDate+'+'+startDate);
       // window.location.search = urlParams
-      const startDate = $(this).data('startdate');
       const form = $('form.searchandfilter');
       const [inputFrom, inputTo] = $('[name="_sfm_start_date[]"]');
+      const startDate = $(this).data('startdate');
+      $(this).addClass('active');
 
-      inputFrom.value = startDate;
-      inputTo.value = startDate;
+      if(startDate === 'all'){
+        inputFrom.value = '';
+        inputTo.value = '';
+      } else {
+        inputFrom.value = startDate;
+        inputTo.value = startDate;
+      }
+
       form.submit();
     });
   })(jQuery)

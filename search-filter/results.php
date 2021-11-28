@@ -29,11 +29,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 //get_template_part();
 
-
+get_template_part('template-parts/start-dates');
 if ( $query->have_posts() )
 {
     ?>
-<?php get_template_part('template-parts/start-dates');?>
+
 
 <section class="container programm-results search-filter-results-list">
 

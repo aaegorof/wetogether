@@ -21,3 +21,4 @@ $imgUrl = get_the_post_thumbnail_url();
         </div>
     </div>
 </a>
+<?php wp_reset_postdata() ;?>
