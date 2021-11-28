@@ -46,8 +46,6 @@ if ( $query->have_posts() )
     }
     ?>
 </section>
-  Стр <?php echo $query->query['paged']; ?> of <?php echo $query->max_num_pages; ?><br />
-
   <div class="pagination">
 
     <div class="nav-previous"><?php next_posts_link( 'След', $query->max_num_pages ); ?></div>

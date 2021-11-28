@@ -224,7 +224,9 @@ function twentytwenty_register_scripts() {
 
 	wp_enqueue_script( 'twentytwenty-js', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false );
 	wp_enqueue_script( 'ouical', get_template_directory_uri() . '/assets/js/ouical.js', array());
-	wp_enqueue_script( 'semantic-tab', get_template_directory_uri() . '/assets/vendor/tab.js', array('jquery'));
+	wp_enqueue_script( 'parallax', get_template_directory_uri() . '/assets/vendor/parallax.min.js', array());
+    wp_enqueue_script( 'jq-mousewheel', get_template_directory_uri() . '/assets/vendor/jquery.mousewheel.min.js', array('jquery'));
+    wp_enqueue_script( 'semantic-tab', get_template_directory_uri() . '/assets/vendor/tab.js', array('jquery'));
 	wp_enqueue_script( 'semantic-transition', get_template_directory_uri() . '/assets/vendor/transition.js', array('jquery'));
 	wp_enqueue_script( 'semantic-dropdown', get_template_directory_uri() . '/assets/vendor/dropdown.js', array('jquery'));
 	wp_enqueue_script( 'semantic-dimmer', get_template_directory_uri() . '/assets/vendor/dimmer.js', array('jquery'));

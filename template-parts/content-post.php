@@ -11,21 +11,8 @@
  * @since Twenty Twenty 1.0
  */
 global $post;
-$samePosts = get_posts(array(
-    'posts_per_page' => 3,
-    'post_type' => 'post',
-    'meta_key' => '',
-    'orderby' => 'meta_value',
-    'order'  => 'ASC',
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'category',
-            'terms' => get_categories(),
-        )
-    )
-));
 ?>
-<?php get_template_part('template-parts/content-nav') ;?>
+<?php get_template_part('template-parts/content-nav'); ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
@@ -34,33 +21,20 @@ $samePosts = get_posts(array(
       <div class="post-body bg-white pd-2">
         <div class="row meta-top">
           <div class="text-note">
-            <?php the_date('F j Y, g:i') ;?>
+              <?php the_date('F j Y, g:i'); ?>
           </div>
         </div>
         <h1><?php the_title(); ?></h1>
-        <?php the_content();?>
+          <?php the_content(); ?>
       </div>
     </div>
     <aside class="col-md-3 pd-1">
-        <?php if(get_post_thumbnail_id()) :?>
-          <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
-        <?php endif ;?>
+        <?php if (get_post_thumbnail_id()) : ?>
+          <img src="<?= get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+        <?php endif; ?>
     </aside>
   </div>
 
-	<div class="container">
-		<?php
-		  edit_post_link();
-		  if(!empty($samePosts)): ?>
-    <h2><?php _e('Смотрите также', 'twentytwenty') ;?></h2>
-    <div class="grid-4 mg-2-t mg-4-b">
-    <?php foreach ($samePosts as $post) {
-      setup_postdata($post);
-        get_template_part('template-parts/card', '', array('withDate' => true));
-      }
-    wp_reset_postdata();?>
-      <?php endif;?>
-    </div>
-	</div><!-- .section-inner -->
+
 
 </article><!-- .post -->

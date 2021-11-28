@@ -26,9 +26,6 @@ ORDER BY pm.meta_value ASC
 //$formatted_date = date_i18n('j F Y с H:i', strtotime($start_date));
 $explodeDate = function ($val) {
     $onlyDate = explode(' ', $val)[0];
-    if (strtotime($val) >= strtotime(date('Ymd H:i'))) {
-        return date_i18n('j F', strtotime($onlyDate));
-    }
 };
 $values = array_filter(array_unique(get_meta_values('start_date', 'event')), function ($value) {
     return !is_null($value) && $value !== '';
@@ -46,9 +43,25 @@ $values = array_filter(array_unique(get_meta_values('start_date', 'event')), fun
             if (!in_array($onlyDate, $uniqDates)):?>
                 <?php array_push($uniqDates, $onlyDate);; ?>
               <a class="item set-start-date"
-                      data-startDate="<?= $onlyDate; ?>"> <?= date_i18n('j F', strtotime($onlyDate)); ?> </a>
+                      data-startDate="<?= date_i18n('Y/m/d',strtotime($onlyDate)); ?>"> <?= date_i18n('j F', strtotime($onlyDate)); ?> </a>
             <?php endif; ?>
         <?php endif; ?>
     <?php endforeach; ?>
 </div>
 
+<script>
+  (function ($) {
+    $(document).on('click', '.set-start-date', function(){
+      // const urlParams = new URLSearchParams(window.location.search);
+      // urlParams.set('_sfm_start_date', startDate+'+'+startDate);
+      // window.location.search = urlParams
+      const startDate = $(this).data('startdate');
+      const form = $('form.searchandfilter');
+      const [inputFrom, inputTo] = $('[name="_sfm_start_date[]"]');
+
+      inputFrom.value = startDate;
+      inputTo.value = startDate;
+      form.submit();
+    });
+  })(jQuery)
+</script>
