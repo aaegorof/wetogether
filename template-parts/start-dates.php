@@ -31,18 +31,18 @@ $values = array_filter(array_unique(get_meta_values('start_date', 'event')), fun
 ?>
 <?php $uniqDates = []; ?>
 <div class="programm-dates ui top secondary menu">
-    <a class="item set-start-date"
-       data-startDate="all">Все</a>
+  <a class="item set-start-date"
+     data-startDate="all">Все</a>
     <?php foreach ($values as $k => $val): ?>
-        <?php if (strtotime($val) >= strtotime(date('Ymd H:i'))) : ?>
-            <?php
-            $onlyDate = explode(' ', $val)[0];
-            if (!in_array($onlyDate, $uniqDates)):?>
-                <?php array_push($uniqDates, $onlyDate);; ?>
-              <a class="item set-start-date"
-                      data-startDate="<?= date_i18n('Y/m/d',strtotime($onlyDate)); ?>"> <?= date_i18n('j F', strtotime($onlyDate)); ?> </a>
-            <?php endif; ?>
+
+        <?php
+        $onlyDate = explode(' ', $val)[0];
+        if (!in_array($onlyDate, $uniqDates)):?>
+            <?php array_push($uniqDates, $onlyDate);; ?>
+          <a class="item set-start-date"
+             data-startDate="<?= date_i18n('Y/m/d', strtotime($onlyDate)); ?>"> <?= date_i18n('j F', strtotime($onlyDate)); ?> </a>
         <?php endif; ?>
+
     <?php endforeach; ?>
 </div>
 
@@ -51,9 +51,9 @@ $values = array_filter(array_unique(get_meta_values('start_date', 'event')), fun
     const updateActiveTabs = () => {
       const urlParams = new URLSearchParams(window.location.search);
       const dateFromUrl = urlParams.get('_sfm_start_date')?.split(' ')[0];
-      if(dateFromUrl){
-        const year = dateFromUrl.slice(0,4);
-        const month = dateFromUrl.slice(4,6);
+      if (dateFromUrl) {
+        const year = dateFromUrl.slice(0, 4);
+        const month = dateFromUrl.slice(4, 6);
         const date = dateFromUrl.slice(-2);
         const tabLink = $(`[data-startdate="${year}/${month}/${date}"]`);
         tabLink.addClass('active');
@@ -64,7 +64,7 @@ $values = array_filter(array_unique(get_meta_values('start_date', 'event')), fun
 
     $(document).ready(updateActiveTabs);
 
-    $(document).on('click', '.set-start-date', function(){
+    $(document).on('click', '.set-start-date', function () {
       // urlParams.set('_sfm_start_date', startDate+'+'+startDate);
       // window.location.search = urlParams
       const form = $('form.searchandfilter');
@@ -72,7 +72,7 @@ $values = array_filter(array_unique(get_meta_values('start_date', 'event')), fun
       const startDate = $(this).data('startdate');
       $(this).addClass('active');
 
-      if(startDate === 'all'){
+      if (startDate === 'all') {
         inputFrom.value = '';
         inputTo.value = '';
       } else {
