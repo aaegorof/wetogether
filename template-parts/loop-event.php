@@ -1,5 +1,6 @@
 <?php
 $speakers = get_field('event-speakers');
+$moderators = get_field('moderator');
 $start_date = get_field('start_date');
 $end_date = get_field('end_date');
 $start_date_D = get_field('start_date') ? new DateTime($start_date) : null;
@@ -13,15 +14,13 @@ $types = get_the_terms($post->ID, 'event_type');
 ?>
 
 <div class="event-item">
+    <?php if (!is_single()) : ?>
   <div class="event-title">
-      <?php if (!is_single()) : ?>
     <a href="<?php the_permalink(); ?>">
-        <?php endif; ?>
         <?php the_title(); ?>
-        <?php if (!is_single()) : ?>
     </a>
-  <?php endif; ?>
   </div>
+    <?php endif; ?>
     <?php if (!is_single()) : ?>
       <div class="excerpt"><?php the_excerpt(); ?></div>
     <?php endif; ?>
@@ -55,6 +54,18 @@ $types = get_the_terms($post->ID, 'event_type');
       <?= $formatted_date; ?>
       <?= $end_date ? ' – ' . date_format($end_date_D, 'H:i') : ''; ?>
   </div>
+
+    <?php if (isset($moderators[0])): ?>
+      <div class="speaker-list">
+        <div style="align-self: center;">Модераторы: </div>
+          <?php foreach ($moderators as $moderator): ?>
+            <a class="speaker" href="<?= get_post_permalink($moderator->ID); ?>">
+              <img src="<?= get_the_post_thumbnail_url($moderator); ?>" alt="">
+                <?= $moderator->post_title; ?>
+            </a>
+          <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
 
   <div class="buttons-row">
     <div class="ui dropdown add-event-<?= get_the_ID(); ?>">

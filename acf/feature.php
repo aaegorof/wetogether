@@ -99,8 +99,7 @@ $isAlone = !!empty($args);
       <?php endif; ?>
       <?php endif; ?>
     <div class="feature-item row <?= $view; ?>">
-      <div class="row">
-        <div class="col-md-7 pd-md-2-r">
+        <div class="<?= $image ? 'col-md-7 pd-md-2-r' : 'col-sm-12'; ?>">
           <h3><?= $title ?></h3>
           <div class="feature-description"><?= $description ?></div>
 
@@ -118,10 +117,11 @@ $isAlone = !!empty($args);
               <?php endif; ?>
           </div>
         </div>
+      <?php if($image): ?>
         <div class="col-md-5 pd-md-2-l hide-sm-max">
           <img src="<?= $image; ?>" class="feature-img opacityanimated" alt=""/>
         </div>
-      </div>
+      <?php endif ;?>
     </div>
       <?php if ($isAlone) : ?>
   </div>

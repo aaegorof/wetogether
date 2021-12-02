@@ -1,7 +1,7 @@
 <?php
-['withDate' => $withDate, 'class' =>$class, 'withExcerpt' => $withExcerpt] = $args;
+['withDate' => $withDate, 'class' =>$class, 'withExcerpt' => $withExcerpt, 'imgfieldname' => $imgfieldname ] = $args;
 
-$imgUrl = get_the_post_thumbnail_url();
+$imgUrl = get_field($imgfieldname) ? get_field($imgfieldname)  : get_the_post_thumbnail_url();
 ?>
 <a href="<?= get_permalink() ;?>" class="card-item <?= $class;?>">
   <?php if($imgUrl):?>

@@ -29,9 +29,6 @@ $values = array_filter(array_unique(get_meta_values('start_date', 'event')), fun
     return !is_null($value) && $value !== '';
 });
 ?>
-<pre class="hide-lg">
-<?php print_r($sf_current_query) ;?>
-</pre>
 <?php $uniqDates = []; ?>
 <div class="programm-dates ui top secondary menu">
     <a class="item set-start-date"

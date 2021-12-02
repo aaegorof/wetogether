@@ -196,7 +196,7 @@ function twentytwenty_register_styles() {
 	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
 //	wp_enqueue_style( 'jssocials-minima', get_stylesheet_uri() . '/assets/css/jssocials.css', array(), $theme_version );
 //	wp_enqueue_style( 'jssocials', get_stylesheet_uri() . '/assets/css/jssocials-theme-minima.css', array(), $theme_version );
-	wp_enqueue_style( 'main', get_template_directory_uri(). '/assets/css/main.css', null, $theme_version );
+	wp_enqueue_style( 'main', get_template_directory_uri(). '/assets/css/main.css', null, '1.2.3' );
 	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
 
 	// Add output of Customizer settings as inline style.
@@ -990,18 +990,18 @@ add_filter( 'excerpt_length', function(){
 } );
 
 
-function filter_function_name($input_object, $sfid){
-    if($input_object['name']=='_my_field_name')
-    {
-        //udpate this field before rendering
-    }
+//function filter_function_name($input_object, $sfid){
+//    if($input_object['name']=='_my_field_name')
+//    {
+//        //udpate this field before rendering
+//    }
+//
+//    return $input_object;
+//}
+//
+//add_filter('sf_input_object_pre', 'filter_function_name', 10, 2);
 
-    return $input_object;
-}
-
-add_filter('sf_input_object_pre', 'filter_function_name', 10, 2);
-
-add_action('acf/save_post', 'my_acf_save_post', 5);
+add_action('acf/save_post', 'my_acf_save_post');
 
 function my_acf_save_post( $post_id ) {
     // Get previous values.
@@ -1009,7 +1009,8 @@ function my_acf_save_post( $post_id ) {
     $start_date = $prev_values['start_date'];
     $start_date_only = explode(' ', $start_date)[0];
     //update_field('start_date', $start_date_only);
-
+    $start = get_field('start_date', $post_id);
+    update_field('fake_date', date('Y-m-d H:i:s', strtotime( $start )), $post_id);
     // Get submitted values.
     $values = $_POST['acf'];
 
@@ -1020,9 +1021,10 @@ function my_acf_save_post( $post_id ) {
     }
 }
 
-add_filter('acf/update_value/type=date_time_picker', 'my_update_value_date_time_picker', 10, 3);
+add_filter('acf/update_value/name=start_date', 'my_update_value_date_time_picker', 10, 3);
+add_filter('acf/update_value/name=end_date', 'my_update_value_date_time_picker', 10, 3);
 function my_update_value_date_time_picker( $value, $post_id, $field ) {
-    return date('Ymd H:i', strtotime( $value ));
+    return date('Ymd H:i:s', strtotime( $value ));
 }
 
 function updateAllEvents($type){
@@ -1030,9 +1032,8 @@ function updateAllEvents($type){
     $posts = get_posts(['post_type' => 'event', 'numberposts' => -1, 'post_status' => 'publish']);
     foreach($posts as $post){
       $start = get_field('start_date', $post);
-      $end = get_field('end_date', $post);
-        update_field('end_date', date('Ymd H:i', strtotime( $end )), $post->ID);
-}
+        update_field('fake_date', date('Y-m-d H:i:s', strtotime( $start )), $post->ID);
+  }
 }
 //Be carefull - this will update all start dates...or end dates
 //add_action( 'wp_loaded', 'updateAllEvents' );

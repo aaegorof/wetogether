@@ -1,5 +1,5 @@
 <?php
-$props = array("withDate"=> false);
+$props = array("withDate"=> false, "imgfieldname" => "img-2");
 
 ?>
 

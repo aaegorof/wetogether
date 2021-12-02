@@ -22,8 +22,21 @@
       padding-top: 0;
     }
   }
+
+  @media screen  and (max-width: $md - 1px){
+    & > ul {
+      gap: 0;
+    }
+  }
 }
 
 .sf_date_field {
   display: flex;
+}
+
+@media screen  and (max-width: $md - 1px) {
+  .programm-dates {
+      margin-bottom: 0;
+    flex-wrap: wrap;
+  }
 }

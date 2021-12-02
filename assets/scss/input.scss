@@ -160,7 +160,7 @@ textarea {
   }
 
   @media screen and (max-width: $sm - 1px) {
-    width: 100%;
+    min-width: 100%;
     .chosen-single, .chosen-choices {
       font-size: 12px;
       height: 40px;
