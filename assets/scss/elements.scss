@@ -47,7 +47,6 @@ input[type=submit]{
   border-color: $primary;
 }
 
-
 .meta {
   display: flex;
   align-items: center;
@@ -104,7 +103,7 @@ input[type=submit]{
     }
     img {
       width: 100%;
-      height: 220px;
+      height: 250px;
       object-fit: cover;
       border-radius: $radius;
       & + .metas {

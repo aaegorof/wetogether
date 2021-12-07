@@ -196,7 +196,7 @@ function twentytwenty_register_styles() {
 	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
 //	wp_enqueue_style( 'jssocials-minima', get_stylesheet_uri() . '/assets/css/jssocials.css', array(), $theme_version );
 //	wp_enqueue_style( 'jssocials', get_stylesheet_uri() . '/assets/css/jssocials-theme-minima.css', array(), $theme_version );
-	wp_enqueue_style( 'main', get_template_directory_uri(). '/assets/css/main.css', null, '1.2.3' );
+	wp_enqueue_style( 'main', get_template_directory_uri(). '/assets/css/main.css', null, '1.2.5' );
 	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
 
 	// Add output of Customizer settings as inline style.

@@ -12,9 +12,11 @@ $link = $args['link'] ? $args['link'] : get_sub_field('link');
 $link2 = $args['link_2'] ? $args['link_2'] : get_sub_field('link_2');
 $view = $args['view'] ? $args['view'] : get_sub_field('view');
 $isAlone = !!empty($args);
+
+$uniqId = substr( md5( serialize( $title ) ), 0, 8 );
 ?>
 <?php if ($isAlone) : ?>
-<section class="feature-wrap <?= $view ;?>-wrap">
+<section class="feature-wrap <?= $view ;?>-wrap" id="<?= $uniqId;?>">
     <?php if ($view === 'flysvg') : ?>
       <svg width="162" height="283" viewBox="0 0 162 283" fill="none" xmlns="http://www.w3.org/2000/svg"
            class="right-svg fly-svg">
